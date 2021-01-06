@@ -1,7 +1,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Feldosbetterweaponsmod.Items
+namespace Feldosbetterweaponsmod.Items.Weapons
 {
 	public class Mec : ModItem
 	{
@@ -25,6 +25,8 @@ namespace Feldosbetterweaponsmod.Items
 			item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
+			item.shoot = mod.ProjectileType("Healproj");
+			item.shootSpeed = 15f;
 		}
 	}
 }

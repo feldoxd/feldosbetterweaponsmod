@@ -1,4 +1,5 @@
-
+obj/
+bin/
 .vs/Feldosbetterweaponsmod/v16/.suo
 *.v2
 Feldosbetterweaponsmod.csproj
@@ -6,4 +7,6 @@ Feldosbetterweaponsmod.csproj
 *.props
 *.targets
 *.cache
-*.mp3
+obj/Debug/net45/Feldosbetterweaponsmod.AssemblyInfo.cs
+obj/Debug/net45/.NETFramework,Version=v4.5.AssemblyAttributes.cs
+Feldosbetterweaponsmod.csproj.user
