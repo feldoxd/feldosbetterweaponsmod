@@ -1,5 +1,8 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
+
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -7,17 +10,17 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("mec"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			DisplayName.SetDefault("mec");
 			Tooltip.SetDefault("XDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD.");
 		}
 
 		public override void SetDefaults() 
 		{
-			item.damage = 5000000;
+			item.damage = 500000000;
 			item.melee = true;
 			item.width = 40;
 			item.height = 40;
-			item.useTime = 5;
+			item.useTime = 1;
 			item.useAnimation = 20;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
@@ -25,8 +28,22 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-			item.shoot = mod.ProjectileType("Healproj");
-			item.shootSpeed = 15f;
+			item.shoot = ProjectileID.Meowmere;
+			item.shootSpeed = 25f;
+		}
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			type = Main.rand.Next(new int[] { type, ProjectileID.ExplosiveBunny, ProjectileID.Meteor1, ProjectileID.Meteor2, ProjectileID.Meteor3, ProjectileID.TerraBeam, ProjectileID.TerrarianBeam, ProjectileID.ChlorophyteBullet, ProjectileID.NebulaArcanum, ProjectileID.MolotovFire });
+			int numberProjectiles = 8 + Main.rand.Next(56); // 4 or 5 shots
+			for (int i = 0; i < numberProjectiles; i++)
+			{
+				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(30)); // 30 degree spread.
+				// If you want to randomize the speed to stagger the projectiles
+				// float scale = 1f - (Main.rand.NextFloat() * .3f);
+				// perturbedSpeed = perturbedSpeed * scale; 
+				Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
+			}
+			return false; // return false because we don't want tmodloader to shoot projectile
 		}
 	}
 }

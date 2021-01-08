@@ -22,7 +22,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.ranged = true; // sets the damage type to ranged
 			item.width = 52; // hitbox width of the item
 			item.height = 32; // hitbox height of the item
-			item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
+			item.useTime = 3; // The item's use time in ticks (60 ticks == 1 second.)
 			item.useAnimation = 2; // The length of the item's use animation in ticks (60 ticks == 1 second.)
 			item.useStyle = ItemUseStyleID.HoldingOut; // how you use the item (swinging, holding out, etc)
 			item.noMelee = true; //so the item's animation doesn't do damage
