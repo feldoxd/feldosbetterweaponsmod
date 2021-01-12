@@ -9,12 +9,12 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("This is a modded sword.");  //The (English) text shown below your weapon's name
+			DisplayName.SetDefault("Cursed wrath");
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 50; // The damage your item deals
+			item.damage = 165; // The damage your item deals
 			item.melee = true; // Whether your item is part of the melee class
 			item.width = 40; // The item texture's width
 			item.height = 40; // The item texture's height
@@ -25,22 +25,18 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.rare = ItemRarityID.Green; // The rarity of the weapon, from -1 to 13. You can also use ItemRarityID.TheColorRarity
 			item.UseSound = SoundID.Item1; // The sound when the weapon is being used
 			item.autoReuse = true; // Whether the weapon can be used more than once automatically by holding the use button
-			item.crit = 6; // The critical strike chance the weapon has. The player, by default, has 4 critical strike chance
+			item.crit = 24; // The critical strike chance the weapon has. The player, by default, has 4 critical strike chance
 			item.shoot = ProjectileID.StarWrath;
-			item.shootSpeed = 8f;
-
-			//The useStyle of the item. 
-			//Use useStyle 1 for normal swinging or for throwing
-			//use useStyle 2 for an item that drinks such as a potion,
-			//use useStyle 3 to make the sword act like a shortsword
-			//use useStyle 4 for use like a life crystal,
-			//and use useStyle 5 for staffs or guns
+			item.shootSpeed = 16f;
 			item.useStyle = ItemUseStyleID.SwingThrow; // 1 is the useStyle
 		}
 
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.FragmentSolar, 20);
+			recipe.AddIngredient(ItemID.LunarBar, 10);
+			recipe.AddIngredient(ItemID.CursedFlames, 30);
 			recipe.AddIngredient(ItemID.StarWrath);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(this);

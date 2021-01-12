@@ -1,5 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
+﻿using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
@@ -8,7 +7,8 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("This is a modded bullet ammo.");
+			DisplayName.SetDefault("Beetle bullet");
+			Tooltip.SetDefault("Warning: may be too accurate.");
 		}
 
 		public override void SetDefaults()

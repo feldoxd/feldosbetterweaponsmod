@@ -22,7 +22,7 @@ namespace Feldosbetterweaponsmod.Items.Placeable
 			item.createTile = ModContent.TileType<Tiles.Covidbinus>();
 			item.width = 24;
 			item.height = 24;
-			item.rare = -12;
+			item.rare = ItemRarityID.Expert;
 			item.value = 100000;
 			item.accessory = true;
 		}

@@ -1,11 +1,13 @@
-﻿using Terraria;
+﻿/*using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
 namespace Feldosbetterweaponsmod.Projectiles
 {
 	public class Cursedwrathproj : ModProjectile
 	{
+		public override string Texture => "Terraria/Projectile_" + ItemID.StarWrath;
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Cursed wrath projectile");
@@ -19,4 +21,4 @@ namespace Feldosbetterweaponsmod.Projectiles
 			projectile.timeLeft = 200;
 		}
 	}
-}
+}*/

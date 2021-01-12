@@ -12,7 +12,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void SetStaticDefaults() 
 		{
 			DisplayName.SetDefault("Glue");
-			Tooltip.SetDefault("XDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD.");
 			ItemID.Sets.ItemsThatCountAsBombsForDemolitionistToSpawn[item.type] = true;
 		}
 

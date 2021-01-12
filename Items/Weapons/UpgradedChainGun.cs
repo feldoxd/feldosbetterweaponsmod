@@ -2,7 +2,6 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-//using Terraria.DataStructures;
 
 
 namespace Feldosbetterweaponsmod.Items.Weapons
@@ -13,7 +12,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			DisplayName.SetDefault("Upgraded chain gun");
 			Tooltip.SetDefault("It costs $400 000 dollars to fire this for 12 seconds.");
-			//Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(51, 6));
 		}
 
 		public override void SetDefaults()
@@ -58,7 +56,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-		
 			Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY)) * 25f;
 			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
 			{
