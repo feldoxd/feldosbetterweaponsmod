@@ -11,7 +11,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void SetStaticDefaults() 
 		{
 			DisplayName.SetDefault("mec");
-			Tooltip.SetDefault("XDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD.");
+			Tooltip.SetDefault("Warning. may crash your game xd.");
 		}
 
 		public override void SetDefaults() 

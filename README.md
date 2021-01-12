@@ -1,3 +1,2 @@
 # feldosbetterweaponsmod
-pretty cool
-still WIP
+ok. some sprites made by my friends xd.

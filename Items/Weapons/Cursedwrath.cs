@@ -18,11 +18,11 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.melee = true; // Whether your item is part of the melee class
 			item.width = 40; // The item texture's width
 			item.height = 40; // The item texture's height
-			item.useTime = 20; // The time span of using the weapon. Remember in terraria, 60 frames is a second.
+			item.useTime = 10; // The time span of using the weapon. Remember in terraria, 60 frames is a second.
 			item.useAnimation = 20; // The time span of the using animation of the weapon, suggest setting it the same as useTime.
 			item.knockBack = 6; // The force of knockback of the weapon. Maximum is 20
 			item.value = Item.buyPrice(gold: 1); // The value of the weapon in copper coins
-			item.rare = ItemRarityID.Green; // The rarity of the weapon, from -1 to 13. You can also use ItemRarityID.TheColorRarity
+			item.rare = ItemRarityID.Red; // The rarity of the weapon, from -1 to 13. You can also use ItemRarityID.TheColorRarity
 			item.UseSound = SoundID.Item1; // The sound when the weapon is being used
 			item.autoReuse = true; // Whether the weapon can be used more than once automatically by holding the use button
 			item.crit = 24; // The critical strike chance the weapon has. The player, by default, has 4 critical strike chance
@@ -36,7 +36,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.FragmentSolar, 20);
 			recipe.AddIngredient(ItemID.LunarBar, 10);
-			recipe.AddIngredient(ItemID.CursedFlames, 30);
+			recipe.AddIngredient(ItemID.CursedFlame, 30);
 			recipe.AddIngredient(ItemID.StarWrath);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(this);
@@ -56,7 +56,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			// Add the Onfire buff to the NPC for 1 second when the weapon hits an NPC
 			// 60 frames = 1 second
-			target.AddBuff(BuffID.OnFire, 60);
+			target.AddBuff(BuffID.CursedInferno, 900);
 		}
 
 		// Star Wrath/Starfury style weapon. Spawn projectiles from sky that aim towards mouse.
