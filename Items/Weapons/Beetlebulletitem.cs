@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
-	public class Beetlebullet : ModItem
+	public class Beetlebulletitem : ModItem
 	{
 		public override void SetStaticDefaults()
 		{

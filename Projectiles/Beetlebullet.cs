@@ -24,7 +24,7 @@ namespace Feldosbetterweaponsmod.Projectiles
             projectile.friendly = true;
             projectile.hostile = false;
             projectile.ranged = true;
-            projectile.penetrate = 2;
+            projectile.penetrate = 1;
             projectile.timeLeft = 600;          //The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
             projectile.alpha = 0;
             projectile.light = 0.9f;
@@ -47,7 +47,7 @@ namespace Feldosbetterweaponsmod.Projectiles
             }
             float num134 = projectile.position.X;
             float num135 = projectile.position.Y;
-            float num136 = 750f;
+            float num136 = 700f;
             bool flag3 = false;
             int num137 = 0;
             if (projectile.ai[1] == 0f)

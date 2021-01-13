@@ -2,6 +2,8 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using Feldosbetterweaponsmod.Projectiles;
+
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -9,7 +11,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("This is a modded gun.");
+			DisplayName.SetDefault("Upgraded Mega shark");
 		}
 
 		public override void SetDefaults()
@@ -32,14 +34,16 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Note that this is not an item Id, but just a magic value.
 		}
 
-		/*public override void AddRecipes()
+		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			//recipe.AddIngredient(ModContent.ItemType<ExampleItem>(), 10);
-			//recipe.AddTile(ModContent.TileType<ExampleWorkbench>());
+			recipe.AddIngredient(ItemID.Megashark);
+			recipe.AddIngredient(ItemID.BeetleHusk, 15);
+			recipe.AddIngredient(ItemID.ChlorophyteBar, 5);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
-		}*/
+		}
 
 		public override bool ConsumeAmmo(Player player)
 		{
@@ -53,11 +57,11 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			{
 				position += muzzleOffset;
 			}
-			if (type == ProjectileID.Bullet) // or ProjectileID.WoodenArrowFriendly
+			if (type == ProjectileID.ChlorophyteBullet)
 			{
-				type = ModContent.ItemType<Beetlebullet>();
+				type = ModContent.ProjectileType<Beetlebullet>();
 			}
-			return true; // return true to allow tmodloader to call Projectile.NewProjectile as normal
+			return true;
 		}
 		public override Vector2? HoldoutOffset()
 		{

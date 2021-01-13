@@ -15,8 +15,15 @@ namespace Feldosbetterweaponsmod.Items
 			item.width = 29;
 			item.height = 40;
 			item.maxStack = 9999;
-			item.value = 100;
-			item.rare = ItemRarityID.Blue;
+			item.useStyle = ItemUseStyleID.EatingUsing;
+			item.UseSound = SoundID.Item3;
+			item.value = 1000;
+			item.useAnimation = 17;
+			item.useTime = 17;
+			item.rare = ItemRarityID.White;
+			item.consumable = true;
+			item.buffType = BuffID.WellFed; //Specify an existing buff to be applied when used.
+			item.buffTime = 36000; //The amount of time the buff declared in item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
 		}
 
 		/*public override void AddRecipes()
