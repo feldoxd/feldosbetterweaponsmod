@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Feldosbetterweaponsmod.Projectiles;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -26,6 +27,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.UseSound = SoundID.Item1; // The sound when the weapon is being used
 			item.autoReuse = true; // Whether the weapon can be used more than once automatically by holding the use button
 			item.crit = 24; // The critical strike chance the weapon has. The player, by default, has 4 critical strike chance
+			//item.shoot = ModContent.ProjectileType<Cursedwrathproj>();
 			item.shoot = ProjectileID.StarWrath;
 			item.shootSpeed = 16f;
 			item.useStyle = ItemUseStyleID.SwingThrow; // 1 is the useStyle

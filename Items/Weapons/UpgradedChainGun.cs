@@ -16,11 +16,11 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 38; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			item.damage = 30; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			item.ranged = true; // sets the damage type to ranged
 			item.width = 52; // hitbox width of the item
 			item.height = 32; // hitbox height of the item
-			item.useTime = 3; // The item's use time in ticks (60 ticks == 1 second.)
+			item.useTime = 4; // The item's use time in ticks (60 ticks == 1 second.)
 			item.useAnimation = 2; // The length of the item's use animation in ticks (60 ticks == 1 second.)
 			item.useStyle = ItemUseStyleID.HoldingOut; // how you use the item (swinging, holding out, etc)
 			item.noMelee = true; //so the item's animation doesn't do damage
@@ -66,6 +66,14 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			speedY = perturbedSpeed.Y;
 			Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ProjectileID.VortexBeaterRocket, damage, knockBack, player.whoAmI);
 			return true;
+		}
+
+		public override void ModifyHitNPC(Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
+		{
+			if (target.type >= NPCID.MoonLordCore || NPCID.MoonLordHand >= target.type || target.type >= NPCID.MoonLordHead)
+				{
+					damage -= 18;
+				}
 		}
 	}
 }

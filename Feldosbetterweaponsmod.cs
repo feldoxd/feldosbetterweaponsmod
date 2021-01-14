@@ -11,5 +11,8 @@ namespace Feldosbetterweaponsmod
 				AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/misc/covidbinus"), ItemType("Covidbinus"), TileType("Covidbinus"));
 			}
 		}
+		public override void Unload()
+        {
+        }
 	}
 }
