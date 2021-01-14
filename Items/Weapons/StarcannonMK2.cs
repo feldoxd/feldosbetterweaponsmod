@@ -37,7 +37,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.StarCannon);
 			recipe.AddIngredient(ItemID.ShroomiteBar, 5);
-			recipe.AddIngredient(ItemID.Star, 5);
+			recipe.AddIngredient(ItemID.FallenStar, 5);
 			recipe.AddTile(TileID.MythrilAnvil );
 			recipe.SetResult(this);
 			recipe.AddRecipe();
