@@ -1,5 +1,7 @@
 using Terraria.ModLoader;
 using Terraria;
+using Terraria.ID;
+using Terraria.Localization;
 namespace Feldosbetterweaponsmod
 {
 	public class Feldosbetterweaponsmod : Mod
@@ -12,7 +14,16 @@ namespace Feldosbetterweaponsmod
 			}
 		}
 		public override void Unload()
-        {
-        }
+		{
+		}
+		public override void AddRecipeGroups()
+		{
+			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil bows", new int[]
+			{
+				ItemID.DemonBow,
+				ItemID.TendonBow
+			});
+			RecipeGroup.RegisterGroup("Feldosbetterweaponsmod:Evilbows", group);
+		}
 	}
 }

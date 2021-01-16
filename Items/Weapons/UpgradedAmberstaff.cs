@@ -1,5 +1,4 @@
-﻿using Feldosbetterweaponsmod.Projectiles;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -15,23 +14,22 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		}
 		public override void SetDefaults()
 		{
-			item.damage = 27;
+			item.damage = 25;
 			item.magic = true;
 			item.mana = 6;
 			item.width = 40;
 			item.height = 38;
-			item.useTime = 23;
+			item.useTime = 25;
 			item.useAnimation = 25;
 			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.noMelee = true; //so the item's animation doesn't do damage
+			item.noMelee = true;
 			item.knockBack = 5;
 			item.value = 10000;
-			item.rare = ItemRarityID.Green;
+			item.rare = ItemRarityID.Orange;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
 			item.shoot = ProjectileID.DiamondBolt;
-			//item.shoot = ModContent.ProjectileType<Amberproj>();
-			item.shootSpeed = 16f;
+			item.shootSpeed = 19f;
 		}
 
 		public override void AddRecipes()

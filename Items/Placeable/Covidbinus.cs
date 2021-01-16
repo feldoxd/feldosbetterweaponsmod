@@ -26,14 +26,5 @@ namespace Feldosbetterweaponsmod.Items.Placeable
 			item.value = 100000;
 			item.accessory = true;
 		}
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Wood, 15);
-			recipe.AddIngredient(ItemID.Ale, 1);
-			recipe.AddTile(TileID.WorkBenches);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
 	}
 }

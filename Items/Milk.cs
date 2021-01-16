@@ -22,16 +22,8 @@ namespace Feldosbetterweaponsmod.Items
 			item.useTime = 17;
 			item.rare = ItemRarityID.White;
 			item.consumable = true;
-			item.buffType = BuffID.WellFed; //Specify an existing buff to be applied when used.
-			item.buffTime = 36000; //The amount of time the buff declared in item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
+			item.buffType = BuffID.WellFed;
+			item.buffTime = 36000;
 		}
-
-		/*public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DirtBlock);
-			recipe.SetResult(this, 999);
-			recipe.AddRecipe();
-		}*/
 	}
 }

@@ -16,7 +16,7 @@ namespace Feldosbetterweaponsmod.Items.Accessories
 			item.height = 20;
 			item.accessory = true;
 			item.value = Item.sellPrice(gold: 30);
-			item.rare = ItemRarityID.Blue;
+			item.rare = ItemRarityID.Cyan;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
