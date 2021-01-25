@@ -26,7 +26,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.value = 10000; // how much the item sells for (measured in copper)
 			item.rare = ItemRarityID.Blue; // the color that the item's name will be in-game
 			item.UseSound = SoundID.Item5; // The sound that this item plays when used.
-			item.autoReuse = true; // if you can hold click to automatically use it again
+			item.autoReuse = false; // if you can hold click to automatically use it again
 			item.shoot = ProjectileID.PurificationPowder; //idk why but all the guns in the vanilla source have this
 			item.shootSpeed = 18f; // the speed of the projectile (measured in pixels per frame)
 			item.useAmmo = AmmoID.Arrow; // The "ammo Id" of the ammo item that this weapon uses. Note that this is not an item Id, but just a magic value.
@@ -43,15 +43,15 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-	public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-	{
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
 		Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY)) * 25f;
 		if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
 		{
 			position += muzzleOffset;
 		}
 		return true;
-	}
+		}
 
 	}
 

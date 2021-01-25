@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
 	public class ObsidianRepeater : ModItem
@@ -25,7 +26,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.value = 50000; // how much the item sells for (measured in copper)
 			item.rare = ItemRarityID.Orange; // the color that the item's name will be in-game
 			item.UseSound = SoundID.Item5; // The sound that this item plays when used.
-			item.autoReuse = true; // if you can hold click to automatically use it again
+			item.autoReuse = false; // if you can hold click to automatically use it again
 			item.shoot = ProjectileID.PurificationPowder; //idk why but all the guns in the vanilla source have this
 			item.shootSpeed = 20f; // the speed of the projectile (measured in pixels per frame)
 			item.useAmmo = AmmoID.Arrow; // The "ammo Id" of the ammo item that this weapon uses. Note that this is not an item Id, but just a magic value.

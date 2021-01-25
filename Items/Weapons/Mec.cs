@@ -24,7 +24,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.useAnimation = 1;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 6;
-			item.value = 10000;
+			item.value = 10000000;
 			item.rare = ItemRarityID.Quest;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
@@ -33,8 +33,8 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			type = Main.rand.Next(new int[] { type, ProjectileID.ExplosiveBunny, ProjectileID.TerraBeam, ProjectileID.TerrarianBeam, ProjectileID.ChlorophyteBullet, ProjectileID.MolotovFire });
-			int numberProjectiles = 8 + Main.rand.Next(100); // 4 or 5 shots
+			type = Main.rand.Next(new int[] { type, ProjectileID.TerraBeam, ProjectileID.TerrarianBeam, ProjectileID.ChlorophyteBullet });
+			int numberProjectiles = 10 + Main.rand.Next(10);
 			for (int i = 0; i < numberProjectiles; i++)
 			{
 				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(30)); // 30 degree spread.

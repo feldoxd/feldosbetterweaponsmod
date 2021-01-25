@@ -1,6 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.DataStructures;
 using Terraria.Utilities;
 
 namespace Feldosbetterweaponsmod.Items.Accessories
@@ -9,11 +10,11 @@ namespace Feldosbetterweaponsmod.Items.Accessories
 	{
 		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("Imunity to levitation.");
+			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(32, 3));
 		}
 
 		public override void SetDefaults() {
 			item.width = 20;
-			item.height = 20;
 			item.accessory = true;
 			item.value = Item.sellPrice(gold: 30);
 			item.rare = ItemRarityID.Cyan;
@@ -31,7 +32,7 @@ namespace Feldosbetterweaponsmod.Items.Accessories
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.FragmentVortex, 5);
-			recipe.AddIngredient(ItemID.GravitationPotion, 2);
+			recipe.AddIngredient(ItemID.IronBar, 2);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Feldosbetterweaponsmod.Projectiles;
+using Feldosbetterweaponsmod.Items.Placeable;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -20,16 +21,16 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.width = 40; // The item texture's width
 			item.height = 40; // The item texture's height
 			item.useTime = 10; // The time span of using the weapon. Remember in terraria, 60 frames is a second.
-			item.useAnimation = 20; // The time span of the using animation of the weapon, suggest setting it the same as useTime.
-			item.knockBack = 6; // The force of knockback of the weapon. Maximum is 20
-			item.value = Item.buyPrice(gold: 30); // The value of the weapon in copper coins
-			item.rare = ItemRarityID.Red; // The rarity of the weapon, from -1 to 13. You can also use ItemRarityID.TheColorRarity
-			item.UseSound = SoundID.Item1; // The sound when the weapon is being used
-			item.autoReuse = true; // Whether the weapon can be used more than once automatically by holding the use button
-			item.crit = 24; // The critical strike chance the weapon has. The player, by default, has 4 critical strike chance
-			item.shoot = ProjectileID.StarWrath;
+			item.useAnimation = 20;
+			item.knockBack = 6;
+			item.value = Item.buyPrice(gold: 30);
+			item.rare = ItemRarityID.Purple;
+			item.UseSound = SoundID.Item9;
+			item.autoReuse = true;
+			item.crit = 24;
+			item.shoot = ModContent.ProjectileType<Cursedwrathproj>();
 			item.shootSpeed = 16f;
-			item.useStyle = ItemUseStyleID.SwingThrow; // 1 is the useStyle
+			item.useStyle = ItemUseStyleID.SwingThrow;
 		}
 
 		public override void AddRecipes()
@@ -38,6 +39,15 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			recipe.AddIngredient(ItemID.FragmentSolar, 20);
 			recipe.AddIngredient(ItemID.LunarBar, 10);
 			recipe.AddIngredient(ItemID.CursedFlame, 30);
+			recipe.AddIngredient(ItemID.StarWrath);
+			recipe.AddIngredient(ItemID.TerraBlade);
+			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ModContent.ItemType<Solarbar>(), 10);
+			recipe.AddIngredient(ItemID.CursedFlame, 30);
+			recipe.AddIngredient(ItemID.TerraBlade);
 			recipe.AddIngredient(ItemID.StarWrath);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(this);
@@ -58,6 +68,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
+
 			Vector2 target = Main.screenPosition + new Vector2((float)Main.mouseX, (float)Main.mouseY);
 			float ceilingLimit = target.Y;
 			if (ceilingLimit > player.Center.Y - 200f)

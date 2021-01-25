@@ -1,5 +1,2 @@
-Currently adds: upgraded chain gun
-                upgraded amber staff
-
-Some joke weapons: Cow sword
-                   mec(use with caution{uncraftable weapon})
+My mod adds some upgraded variants of vanilla weapons and some new as well.
+Some accesories too.
