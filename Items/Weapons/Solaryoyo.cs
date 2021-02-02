@@ -38,7 +38,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.channel = true;
 			item.noMelee = true;
 			item.noUseGraphic = true;
-			item.autoReuse = true;
+			item.autoReuse = false;
 
 			item.UseSound = SoundID.Item1;
 			item.value = Item.sellPrice(silver: 1);

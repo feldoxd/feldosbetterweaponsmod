@@ -14,6 +14,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 			projectile.CloneDefaults(ProjectileID.TerrarianBeam);
 			projectile.width = 20;
 			projectile.height = 20;
+			projectile.netUpdate = true;
 			projectile.timeLeft = 8500;
 
 		}

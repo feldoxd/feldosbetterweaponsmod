@@ -26,11 +26,12 @@ namespace Feldosbetterweaponsmod.Projectiles
 			projectile.extraUpdates = 0;
 			projectile.width = 14;
 			projectile.height = 14;
-			// aiStyle 99 is used for all yoyos, and is Extremely suggested, as yoyo are extremely difficult without them
+			projectile.aiStyle = 99;
 			projectile.aiStyle = 99;
 			projectile.friendly = true;
 			projectile.penetrate = -1;
 			projectile.melee = true;
+			projectile.light = 0.3f;
 			projectile.scale = 1f;
 
 		}

@@ -32,7 +32,7 @@ namespace Feldosbetterweaponsmod.Items.Accessories
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.FragmentVortex, 5);
-			recipe.AddIngredient(ItemID.IronBar, 2);
+			recipe.AddIngredient(ItemID.IronBar, 8);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
