@@ -8,7 +8,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("This is a modded gun.");
+			Tooltip.SetDefault("wip");
 		}
 
 		public override void SetDefaults()
