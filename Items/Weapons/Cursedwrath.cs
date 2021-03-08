@@ -23,7 +23,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.useTime = 10; // The time span of using the weapon. Remember in terraria, 60 frames is a second.
 			item.useAnimation = 20;
 			item.knockBack = 6;
-			item.value = Item.buyPrice(gold: 30);
+			item.value = Item.buyPrice(gold: 290);
 			item.rare = ItemRarityID.Purple;
 			item.UseSound = SoundID.Item9;
 			item.autoReuse = true;

@@ -25,7 +25,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.reuseDelay = 14;
 			item.noMelee = true; //so the item's animation doesn't do damage
 			item.knockBack = 4; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
-			item.value = 10000; // how much the item sells for (measured in copper)
+			item.value = Item.buyPrice(gold: 5);
 			item.rare = ItemRarityID.Cyan; // the color that the item's name will be in-game
 			item.UseSound = SoundID.Item31;
 			item.autoReuse = true; // if you can hold click to automatically use it again

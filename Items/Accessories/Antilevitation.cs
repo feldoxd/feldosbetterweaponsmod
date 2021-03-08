@@ -16,7 +16,7 @@ namespace Feldosbetterweaponsmod.Items.Accessories
 		public override void SetDefaults() {
 			item.width = 20;
 			item.accessory = true;
-			item.value = Item.sellPrice(gold: 30);
+			item.value = Item.sellPrice(gold: 1);
 			item.rare = ItemRarityID.Cyan;
 		}
 

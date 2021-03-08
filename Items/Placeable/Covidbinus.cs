@@ -1,4 +1,5 @@
-﻿using Terraria.ModLoader;
+﻿/*
+using Terraria.ModLoader;
 using Terraria.ID;
 
 namespace Feldosbetterweaponsmod.Items.Placeable
@@ -28,3 +29,4 @@ namespace Feldosbetterweaponsmod.Items.Placeable
 		}
 	}
 }
+*/

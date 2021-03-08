@@ -1,4 +1,5 @@
 ﻿using Terraria.ID;
+using Terraria;
 using Terraria.ModLoader;
 
 namespace Feldosbetterweaponsmod.Items
@@ -17,7 +18,7 @@ namespace Feldosbetterweaponsmod.Items
 			item.maxStack = 9999;
 			item.useStyle = ItemUseStyleID.EatingUsing;
 			item.UseSound = SoundID.Item3;
-			item.value = 1000;
+			item.value = Item.buyPrice(silver: 20);
 			item.useAnimation = 17;
 			item.useTime = 17;
 			item.rare = ItemRarityID.White;

@@ -1,4 +1,5 @@
 ﻿using Terraria.ID;
+using Terraria;
 using Terraria.ModLoader;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
@@ -20,7 +21,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.maxStack = 9999;
 			item.consumable = true;             //You need to set the item consumable so that the ammo would automatically consumed
 			item.knockBack = 1.5f;
-			item.value = 10;
+			item.value = Item.buyPrice(copper: 75);
 			item.rare = ItemRarityID.Yellow;
 			item.shoot = ModContent.ProjectileType<Projectiles.Beetlebullet>();   //The projectile shoot when your weapon using this ammo
 			item.shootSpeed = 16f;                  //The speed of the projectile

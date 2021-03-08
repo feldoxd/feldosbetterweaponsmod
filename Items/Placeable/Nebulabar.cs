@@ -1,4 +1,5 @@
 ﻿using Terraria.ID;
+using Terraria;
 using Terraria.ModLoader;
 using Feldosbetterweaponsmod.Tiles;
 
@@ -18,6 +19,7 @@ namespace Feldosbetterweaponsmod.Items.Placeable
 			item.maxStack = 9999;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.useTurn = true;
+			item.value = Item.buyPrice(gold: 8);
 			item.rare = ItemRarityID.Cyan;
 			item.useAnimation = 15;
 			item.useTime = 10;

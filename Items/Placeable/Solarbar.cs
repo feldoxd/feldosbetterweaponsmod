@@ -1,4 +1,5 @@
 ﻿using Terraria.ID;
+using Terraria;
 using Terraria.ModLoader;
 using Feldosbetterweaponsmod.Tiles;
 
@@ -20,6 +21,7 @@ namespace Feldosbetterweaponsmod.Items.Placeable
 			item.useTurn = true;
 			item.useAnimation = 15;
 			item.rare = ItemRarityID.Cyan;
+			item.value = Item.buyPrice(gold: 8);
 			item.useTime = 10;
 			item.autoReuse = true;
 			item.consumable = true;

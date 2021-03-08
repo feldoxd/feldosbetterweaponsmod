@@ -41,7 +41,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.autoReuse = false;
 
 			item.UseSound = SoundID.Item1;
-			item.value = Item.sellPrice(silver: 1);
+			item.value = Item.sellPrice(gold: 26);
 			item.shoot = ModContent.ProjectileType<Solaryoyoproj>();
 		}
 

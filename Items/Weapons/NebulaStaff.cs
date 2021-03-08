@@ -16,7 +16,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		}
 		public override void SetDefaults()
 		{
-			item.damage = 90;
+			item.damage = 150;
 			item.magic = true;
 			item.mana = 15;
 			item.width = 40;
@@ -26,7 +26,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
 			item.knockBack = 5;
-			item.value = 10000;
+			item.value = Item.buyPrice(gold: 40);
 			item.rare = ItemRarityID.Cyan;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;

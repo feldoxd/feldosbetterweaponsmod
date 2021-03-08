@@ -30,7 +30,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.noMelee = true;
 			item.knockBack = 5f;
 			item.scale = 0.9f;
-			item.value = 0;
+			item.value = Item.sellPrice(gold: 8);
 			item.magic = true;
 		}
 

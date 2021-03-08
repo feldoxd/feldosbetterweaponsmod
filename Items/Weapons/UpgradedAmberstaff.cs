@@ -8,7 +8,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Upgraded amber staff");
+			DisplayName.SetDefault("Hellstone staff");
 			Tooltip.SetDefault("");
 			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 		}
@@ -24,7 +24,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
 			item.knockBack = 5;
-			item.value = 10000;
+			item.value = Item.buyPrice(gold: 10);
 			item.rare = ItemRarityID.Orange;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;

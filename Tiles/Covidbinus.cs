@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿/* disabled
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
@@ -38,3 +39,4 @@ namespace Feldosbetterweaponsmod.Tiles
 		}
 	}
 }
+*/
