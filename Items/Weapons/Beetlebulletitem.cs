@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
-	public class Beetlebulletitem : ModItem
+	public class BeetlebulletItem : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
@@ -14,27 +14,26 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 10;
-			item.ranged = true;
-			item.width = 8;
-			item.height = 8;
-			item.maxStack = 9999;
-			item.consumable = true;             //You need to set the item consumable so that the ammo would automatically consumed
-			item.knockBack = 1.5f;
-			item.value = Item.buyPrice(copper: 75);
-			item.rare = ItemRarityID.Yellow;
-			item.shoot = ModContent.ProjectileType<Projectiles.Beetlebullet>();   //The projectile shoot when your weapon using this ammo
-			item.shootSpeed = 16f;                  //The speed of the projectile
-			item.ammo = AmmoID.Bullet;              //The ammo class this ammo belongs to.
+			Item.damage = 10;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 8;
+			Item.height = 8;
+			Item.maxStack = 9999;
+			Item.consumable = true;             //You need to set the Item consumable so that the ammo would automatically consumed
+			Item.knockBack = 1.5f;
+			Item.value = Item.buyPrice(copper: 75);
+			Item.rare = ItemRarityID.Yellow;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Beetlebullet>();   //The projectile shoot when your weapon using this ammo
+			Item.shootSpeed = 16f;                  //The speed of the projectile
+			Item.ammo = AmmoID.Bullet;              //The ammo class this ammo belongs to.
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.BeetleHusk);
-			recipe.AddIngredient(ItemID.ChlorophyteBullet, 60);
-			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this, 60);
-			recipe.AddRecipe();
+			CreateRecipe()
+			.AddIngredient(ItemID.BeetleHusk)
+			.AddIngredient(ItemID.ChlorophyteBullet, 60)
+			.AddTile(TileID.MythrilAnvil)
+			.Register();
 		}
 	}
 }

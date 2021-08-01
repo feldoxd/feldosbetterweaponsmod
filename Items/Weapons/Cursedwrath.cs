@@ -4,6 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Feldosbetterweaponsmod.Projectiles;
 using Feldosbetterweaponsmod.Items.Placeable;
+using Terraria.DataStructures;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -16,42 +17,40 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 125; // The damage your item deals
-			item.melee = true; // Whether your item is part of the melee class
-			item.width = 40; // The item texture's width
-			item.height = 40; // The item texture's height
-			item.useTime = 10; // The time span of using the weapon. Remember in terraria, 60 frames is a second.
-			item.useAnimation = 20;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(gold: 290);
-			item.rare = ItemRarityID.Purple;
-			item.UseSound = SoundID.Item9;
-			item.autoReuse = true;
-			item.crit = 24;
-			item.shoot = ModContent.ProjectileType<Cursedwrathproj>();
-			item.shootSpeed = 16f;
-			item.useStyle = ItemUseStyleID.SwingThrow;
+			Item.damage = 125; // The damage your Item deals
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 40; // The Item texture's width
+			Item.height = 40; // The Item texture's height
+			Item.useTime = 10; // The time span of using the weapon. Remember in terraria, 60 frames is a second.
+			Item.useAnimation = 20;
+			Item.knockBack = 6f;
+			Item.value = Item.buyPrice(gold: 290);
+			Item.rare = ItemRarityID.Purple;
+			Item.UseSound = SoundID.Item9;
+			Item.autoReuse = true;
+			Item.crit = 24;
+			Item.shoot = ModContent.ProjectileType<Cursedwrathproj>();
+			Item.shootSpeed = 16f;
+			Item.useStyle = ItemUseStyleID.Swing;
 		}
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.FragmentSolar, 20);
-			recipe.AddIngredient(ItemID.LunarBar, 10);
-			recipe.AddIngredient(ItemID.CursedFlame, 30);
-			recipe.AddIngredient(ItemID.StarWrath);
-			recipe.AddIngredient(ItemID.TerraBlade);
-			recipe.AddTile(TileID.LunarCraftingStation);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-			recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Solarbar>(), 10);
-			recipe.AddIngredient(ItemID.CursedFlame, 30);
-			recipe.AddIngredient(ItemID.TerraBlade);
-			recipe.AddIngredient(ItemID.StarWrath);
-			recipe.AddTile(TileID.LunarCraftingStation);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe()
+			.AddIngredient(ItemID.FragmentSolar, 20)
+			.AddIngredient(ItemID.LunarBar, 10)
+			.AddIngredient(ItemID.CursedFlame, 30)
+			.AddIngredient(ItemID.StarWrath)
+			.AddIngredient(ItemID.TerraBlade)
+			.AddTile(TileID.LunarCraftingStation)
+			.Register();
+			CreateRecipe()
+			.AddIngredient(ModContent.ItemType<Solarbar>(), 10)
+			.AddIngredient(ItemID.CursedFlame, 30)
+			.AddIngredient(ItemID.TerraBlade)
+			.AddIngredient(ItemID.StarWrath)
+			.AddTile(TileID.LunarCraftingStation)
+			.Register();
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)
@@ -66,7 +65,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			target.AddBuff(BuffID.CursedInferno, 900);
 		}
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
 
 			Vector2 target = Main.screenPosition + new Vector2((float)Main.mouseX, (float)Main.mouseY);
@@ -89,10 +88,11 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 					heading.Y = 20f;
 				}
 				heading.Normalize();
-				heading *= new Vector2(speedX, speedY).Length();
-				speedX = heading.X;
-				speedY = heading.Y + Main.rand.Next(-40, 41) * 0.02f;
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage * 2, knockBack, player.whoAmI, 0f, ceilingLimit);
+				heading *= position.Length();
+				//position = heading.X;
+				//speedY = heading.Y + Main.rand.Next(-40, 41) * 0.02f;
+
+				Projectile.NewProjectile(source ,position, velocity, type, damage * 2, knockback, player.whoAmI, 0f, ceilingLimit);
 			}
 			return false;
 		}

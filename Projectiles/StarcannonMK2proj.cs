@@ -6,19 +6,19 @@ namespace Feldosbetterweaponsmod.Projectiles
 
 	public class StarcannonMK2proj : ModProjectile
 	{
-		public override string Texture => "Terraria/Projectile_" + ProjectileID.HallowStar;
+		public override string Texture => "Terraria/Images/Projectile_" + ProjectileID.HallowStar;
 		public override void SetDefaults()
 		{
-			projectile.CloneDefaults(ProjectileID.HallowStar);
-			projectile.friendly = true;
-			projectile.ignoreWater = true;
-			projectile.tileCollide = true;
-			projectile.penetrate = -1;
+			Projectile.CloneDefaults(ProjectileID.HallowStar);
+			Projectile.friendly = true;
+			Projectile.ignoreWater = true;
+			Projectile.tileCollide = true;
+			Projectile.penetrate = -1;
 
 		}
 		public override void AI()
 		{
-			projectile.type = 92;
+			Projectile.type = 92;
 		}
 	}
 }

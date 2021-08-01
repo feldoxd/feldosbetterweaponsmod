@@ -1,6 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.DataStructures;
 using Feldosbetterweaponsmod.Projectiles;
 using Microsoft.Xna.Framework;
 
@@ -12,40 +13,40 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			DisplayName.SetDefault("Crystal staff");
 			Tooltip.SetDefault("More powerfull version of Blizzard staff combined with Crystal storm");
-			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 		}
 		public override void SetDefaults()
 		{
-			item.damage = 42;
-			item.magic = true;
-			item.mana = 26;
-			item.width = 32;
-			item.height = 47;
-			item.useTime = 4;
-			item.useAnimation = 25;
-			item.useStyle = ItemUseStyleID.HoldingUp;
-			item.noMelee = true;
-			item.knockBack = 5;
-			item.value = Item.buyPrice(gold: 140);
-			item.rare = ItemRarityID.Cyan;
-			item.UseSound = SoundID.Item20;
-			item.autoReuse = true;
-			item.shoot = ProjectileID.CrystalBullet;
-			item.shootSpeed = 16f;
+			Item.damage = 42;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 26;
+			Item.width = 32;
+			Item.height = 47;
+			Item.useTime = 4;
+			Item.useAnimation = 25;
+			Item.useStyle = ItemUseStyleID.Shoot;
+			Item.noMelee = true;
+			Item.knockBack = 5f;
+			Item.value = Item.buyPrice(gold: 140);
+			Item.rare = ItemRarityID.Cyan;
+			Item.UseSound = SoundID.Item20;
+			Item.autoReuse = true;
+			Item.shoot = ProjectileID.CrystalBullet;
+			Item.shootSpeed = 16f;
 		}
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.BlizzardStaff);
-			recipe.AddIngredient(ItemID.CrystalStorm);
-			recipe.AddIngredient(ItemID.SoulofSight, 15);
-			recipe.AddIngredient(ItemID.FragmentNebula, 5);
-			recipe.AddTile(TileID.LunarCraftingStation);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe()
+			.AddIngredient(ItemID.BlizzardStaff)
+			.AddIngredient(ItemID.CrystalStorm)
+			.AddIngredient(ItemID.SoulofSight, 15)
+			.AddIngredient(ItemID.FragmentNebula, 5)
+			.AddTile(TileID.Anvils)
+			.Register();
+
 		}
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
 			Vector2 target = Main.screenPosition + new Vector2((float)Main.mouseX, (float)Main.mouseY);
 			float ceilingLimit = target.Y;
@@ -67,10 +68,11 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 					heading.Y = 20f;
 				}
 				heading.Normalize();
-				heading *= new Vector2(speedX, speedY).Length();
-				speedX = heading.X;
-				speedY = heading.Y + Main.rand.Next(-40, 41) * 0.02f;
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage * 2, knockBack, player.whoAmI, 0f, ceilingLimit);
+				//heading *= new Vector2(speedX, speedY).Length();
+				//speedX = heading.X;
+				//speedY = heading.Y + Main.rand.Next(-40, 41) * 0.02f;
+
+				Projectile.NewProjectile(source ,position, velocity, type, damage * 2, knockback, player.whoAmI, 0f, ceilingLimit);
 			}
 			return false;
 		}

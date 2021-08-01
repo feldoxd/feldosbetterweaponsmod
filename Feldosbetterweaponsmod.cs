@@ -1,8 +1,7 @@
-using Terraria.ModLoader;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
-using Feldosbetterweaponsmod.Items.Placeable;
+using Terraria.ModLoader;
 
 namespace Feldosbetterweaponsmod
 {
@@ -10,15 +9,13 @@ namespace Feldosbetterweaponsmod
 	{
 		public override void Load()
 		{
-			if (!Main.dedServ) // do not run this code on the server
-			{
-				//AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/misc/covidbinus"), ItemType("Covidbinus"), TileType("Covidbinus")); just no
-			}
+
 		}
 		public override void Unload()
 		{
+
 		}
-		public override void AddRecipeGroups()
+		/*public override void AddRecipeGroups()
 		{
 			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil bows", new int[]
 			{
@@ -27,13 +24,10 @@ namespace Feldosbetterweaponsmod
 			});
 			RecipeGroup.RegisterGroup("Feldosbetterweaponsmod:Evilbows", group);
 		}
-		public override void AddRecipes()
-		{
-			//i know i used ctrl c + ctrl v too much lol
-			//solar stuff
-			ModRecipe recipe = new ModRecipe(this);
+		//solar stuff
+		ModRecipe recipe = new ModRecipe(this);
 			recipe.AddIngredient(ModContent.ItemType<Solarbar>(), 4);
-			recipe.SetResult(ItemID.SolarFlareHelmet);
+			recipe
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.AddRecipe();
 			recipe = new ModRecipe(this);
@@ -97,6 +91,7 @@ namespace Feldosbetterweaponsmod
 			recipe.SetResult(ItemID.StardustLeggings);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.AddRecipe();
-		}
+		*/
+
 	}
 }

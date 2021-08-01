@@ -6,6 +6,7 @@ using Terraria.ModLoader;
 using Feldosbetterweaponsmod.Items.Placeable;
 using Microsoft.Xna.Framework;
 using Terraria.Utilities;
+using Terraria.DataStructures;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -16,36 +17,36 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			DisplayName.SetDefault("Solar yoyo");
 
 			// These are all related to gamepad controls and don't seem to affect anything else
-			ItemID.Sets.Yoyo[item.type] = true;
-			ItemID.Sets.GamepadExtraRange[item.type] = 15;
-			ItemID.Sets.GamepadSmartQuickReach[item.type] = true;
+			ItemID.Sets.Yoyo[Item.type] = true;
+			ItemID.Sets.GamepadExtraRange[Item.type] = 15;
+			ItemID.Sets.GamepadSmartQuickReach[Item.type] = true;
 		}
 
 		public override void SetDefaults()
 		{
-			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.width = 27;
-			item.height = 23;
-			item.useAnimation = 25;
-			item.useTime = 25;
-			item.shootSpeed = 16f;
-			item.knockBack = 2.5f;
-			item.damage = 200;
-			item.crit = 31;
-			item.rare = ItemRarityID.Purple;
+			Item.useStyle = ItemUseStyleID.Shoot;
+			Item.width = 27;
+			Item.height = 23;
+			Item.useAnimation = 25;
+			Item.useTime = 25;
+			Item.shootSpeed = 16f;
+			Item.knockBack = 2.5f;
+			Item.damage = 200;
+			Item.crit = 31;
+			Item.rare = ItemRarityID.Purple;
 
-			item.melee = true;
-			item.channel = true;
-			item.noMelee = true;
-			item.noUseGraphic = true;
-			item.autoReuse = false;
+			Item.DamageType = DamageClass.Melee;
+			Item.channel = true;
+			Item.noMelee = true;
+			Item.noUseGraphic = true;
+			Item.autoReuse = false;
 
-			item.UseSound = SoundID.Item1;
-			item.value = Item.sellPrice(gold: 26);
-			item.shoot = ModContent.ProjectileType<Solaryoyoproj>();
+			Item.UseSound = SoundID.Item1;
+			Item.value = Item.sellPrice(gold: 26);
+			Item.shoot = ModContent.ProjectileType<Solaryoyoproj>();
 		}
 
-		// Make sure that your item can even receive these prefixes (check the vanilla wiki on prefixes)
+		// Make sure that your Item can even receive these prefixes (check the vanilla wiki on prefixes)
 		// These are the ones that reduce damage of a melee weapon
 		private static readonly int[] unwantedPrefixes = new int[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
 
@@ -69,14 +70,13 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Solarbar>(), 10);
-			recipe.AddIngredient(ItemID.Terrarian);
-			recipe.AddTile(TileID.LunarCraftingStation);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe()
+			.AddIngredient(ModContent.ItemType<Solarbar>(), 10)
+			.AddIngredient(ItemID.Terrarian)
+			.AddTile(TileID.LunarCraftingStation)
+			.Register();
 		}
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
 			return true;
         }

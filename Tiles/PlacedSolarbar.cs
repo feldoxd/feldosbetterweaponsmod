@@ -8,7 +8,7 @@ namespace Feldosbetterweaponsmod.Tiles
 {
 	public class PlacedSolarbar : ModTile
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.tileShine[Type] = 1100;
 			Main.tileSolid[Type] = true;

@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Feldosbetterweaponsmod.Projectiles;
 using Microsoft.Xna.Framework;
+using Terraria.DataStructures;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -15,38 +16,37 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		}
 		public override void SetDefaults()
 		{
-			item.mana = 16;
-			item.damage = 99;
-			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.shootSpeed = 9f;
-			item.shoot = ModContent.ProjectileType<NebulatyphoonProj>();
-			item.width = 26;
-			item.height = 28;
-			item.UseSound = SoundID.Item84;
-			item.useAnimation = 40;
-			item.useTime = 26;
-			item.autoReuse = true;
-			item.rare = ItemRarityID.Yellow;
-			item.noMelee = true;
-			item.knockBack = 5f;
-			item.scale = 0.9f;
-			item.value = Item.sellPrice(gold: 8);
-			item.magic = true;
+			Item.mana = 16;
+			Item.damage = 99;
+			Item.useStyle = ItemUseStyleID.None;
+			Item.shootSpeed = 9f;
+			Item.shoot = ModContent.ProjectileType<NebulatyphoonProj>();
+			Item.width = 26;
+			Item.height = 28;
+			Item.UseSound = SoundID.Item84;
+			Item.useAnimation = 40;
+			Item.useTime = 26;
+			Item.autoReuse = true;
+			Item.rare = ItemRarityID.Yellow;
+			Item.noMelee = true;
+			Item.knockBack = 5f;
+			Item.scale = 0.9f;
+			Item.value = Item.sellPrice(gold: 8);
+			Item.DamageType = DamageClass.Magic;
 		}
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.RazorbladeTyphoon);
-			recipe.AddIngredient(ItemID.SoulofLight, 20);
-			recipe.AddIngredient(ItemID.FragmentNebula, 15);
-			recipe.AddTile(TileID.LunarCraftingStation);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe()
+			.AddIngredient(ItemID.RazorbladeTyphoon)
+			.AddIngredient(ItemID.SoulofLight, 20)
+			.AddIngredient(ItemID.FragmentNebula, 15)
+			.AddTile(TileID.LunarCraftingStation)
+			.Register();
 		}
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
-			Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY)) * 25f;
+			Vector2 muzzleOffset = Vector2.Normalize(position) * 25f;
 			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
 			{
 				position += muzzleOffset;

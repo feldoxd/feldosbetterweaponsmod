@@ -9,23 +9,23 @@ namespace Feldosbetterweaponsmod.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.width = 14;
-            projectile.height = 14;
-            projectile.friendly = true;
-            projectile.magic = true;
-            projectile.ignoreWater = true;
-            projectile.penetrate = -1;
-            projectile.timeLeft = 600;
+            Projectile.width = 14;
+            Projectile.height = 14;
+            Projectile.friendly = true;
+            Projectile.DamageType = DamageClass.Magic;
+            Projectile.ignoreWater = true;
+            Projectile.penetrate = -1;
+            Projectile.timeLeft = 600;
         }
 
         public override void AI()
         {
-            projectile.velocity.Y += projectile.ai[0];
+            Projectile.velocity.Y += Projectile.ai[0];
             if (Main.rand.NextBool(3))
             {
-                Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, DustID.WitherLightning, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+                Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.WitherLightning, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f);
             }
-            int num582 = Dust.NewDust(new Vector2(base.projectile.position.X, base.projectile.position.Y), base.projectile.width, base.projectile.height, 21, base.projectile.oldVelocity.X, base.projectile.oldVelocity.Y, 50, default(Color), 1.2f);
+            int num582 = Dust.NewDust(new Vector2(base.Projectile.position.X, base.Projectile.position.Y), base.Projectile.width, base.Projectile.height, 21, base.Projectile.oldVelocity.X, base.Projectile.oldVelocity.Y, 50, default(Color), 1.2f);
             Main.dust[num582].noGravity = true;
             Dust dust = Main.dust[num582];
             dust.scale *= 1.75f;
@@ -36,9 +36,9 @@ namespace Feldosbetterweaponsmod.Projectiles
         {
             for (int k = 0; k < 5; k++)
             {
-                Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, DustID.PinkFlame, projectile.oldVelocity.X * 0.5f, projectile.oldVelocity.Y * 0.5f);
+                Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.SilverFlame, Projectile.oldVelocity.X * 0.5f, Projectile.oldVelocity.Y * 0.5f);
             }
-            Main.PlaySound(SoundID.Item25, projectile.position);
+            Terraria.Audio.SoundEngine.PlaySound(SoundID.Item25, Projectile.position);
         }
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {

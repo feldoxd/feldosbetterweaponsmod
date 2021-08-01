@@ -10,37 +10,36 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			DisplayName.SetDefault("Hellstone staff");
 			Tooltip.SetDefault("");
-			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 		}
 		public override void SetDefaults()
 		{
-			item.damage = 25;
-			item.magic = true;
-			item.mana = 6;
-			item.width = 40;
-			item.height = 38;
-			item.useTime = 25;
-			item.useAnimation = 25;
-			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.noMelee = true;
-			item.knockBack = 5;
-			item.value = Item.buyPrice(gold: 10);
-			item.rare = ItemRarityID.Orange;
-			item.UseSound = SoundID.Item20;
-			item.autoReuse = true;
-			item.shoot = ProjectileID.DiamondBolt;
-			item.shootSpeed = 19f;
+			Item.damage = 25;
+			Item.DamageType = DamageClass.Magic;
+			Item.mana = 6;
+			Item.width = 40;
+			Item.height = 38;
+			Item.useTime = 25;
+			Item.useAnimation = 25;
+			Item.useStyle = ItemUseStyleID.Shoot;
+			Item.noMelee = true;
+			Item.knockBack = 5;
+			Item.value = Item.buyPrice(gold: 10);
+			Item.rare = ItemRarityID.Orange;
+			Item.UseSound = SoundID.Item20;
+			Item.autoReuse = true;
+			Item.shoot = ProjectileID.DiamondBolt;
+			Item.shootSpeed = 19f;
 		}
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.AmberStaff);
-			recipe.AddIngredient(ItemID.Diamond, 3);
-			recipe.AddIngredient(ItemID.HellstoneBar, 3);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe()
+			.AddIngredient(ItemID.AmberStaff)
+			.AddIngredient(ItemID.Diamond, 3)
+			.AddIngredient(ItemID.HellstoneBar, 3)
+			.AddTile(TileID.Anvils)
+			.Register();
 		}
 	}
 }

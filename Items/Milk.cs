@@ -13,18 +13,18 @@ namespace Feldosbetterweaponsmod.Items
 
 		public override void SetDefaults()
 		{
-			item.width = 29;
-			item.height = 40;
-			item.maxStack = 9999;
-			item.useStyle = ItemUseStyleID.EatingUsing;
-			item.UseSound = SoundID.Item3;
-			item.value = Item.buyPrice(silver: 20);
-			item.useAnimation = 17;
-			item.useTime = 17;
-			item.rare = ItemRarityID.White;
-			item.consumable = true;
-			item.buffType = BuffID.WellFed;
-			item.buffTime = 36000;
+			Item.width = 29;
+			Item.height = 40;
+			Item.maxStack = 9999;
+			Item.useStyle = ItemUseStyleID.EatFood;
+			Item.UseSound = SoundID.Item3;
+			Item.value = Item.buyPrice(silver: 20);
+			Item.useAnimation = 17;
+			Item.useTime = 17;
+			Item.rare = ItemRarityID.White;
+			Item.consumable = true;
+			Item.buffType = BuffID.WellFed;
+			Item.buffTime = 36000;
 		}
 	}
 }
