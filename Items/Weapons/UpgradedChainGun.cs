@@ -51,7 +51,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		}
 		public override Vector2? HoldoutOffset()
 		{
-			return new Vector2(2, 0);
+			return new Vector2(2, 10);
 		}
 
         public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -62,7 +62,8 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 				position += muzzleOffset;
 			}
 			Vector2 perturbedSpeed = position.RotatedByRandom(MathHelper.ToRadians(25));
-			Projectile.NewProjectile(source, position, perturbedSpeed, type, damage, knockback);
+
+			Projectile.NewProjectile(source, position, velocity, ProjectileID.VortexBeaterRocket, damage, knockback);
 			return true;
 		}
 
