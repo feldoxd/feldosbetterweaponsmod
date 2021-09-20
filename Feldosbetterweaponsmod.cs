@@ -8,16 +8,6 @@ namespace Feldosbetterweaponsmod
 {
 	public class Feldosbetterweaponsmod : Mod
 	{
-		public override void Load()
-		{
-			if (!Main.dedServ) // do not run this code on the server
-			{
-				//AddMusicBox(GetSoundSlot(SoundType.Music, "Sounds/Music/misc/covidbinus"), ItemType("Covidbinus"), TileType("Covidbinus")); just no
-			}
-		}
-		public override void Unload()
-		{
-		}
 		public override void AddRecipeGroups()
 		{
 			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil bows", new int[]
@@ -29,7 +19,6 @@ namespace Feldosbetterweaponsmod
 		}
 		public override void AddRecipes()
 		{
-			//i know i used ctrl c + ctrl v too much lol
 			//solar stuff
 			ModRecipe recipe = new ModRecipe(this);
 			recipe.AddIngredient(ModContent.ItemType<Solarbar>(), 4);

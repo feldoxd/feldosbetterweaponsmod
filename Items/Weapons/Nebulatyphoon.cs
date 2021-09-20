@@ -18,7 +18,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.mana = 16;
 			item.damage = 99;
 			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.shootSpeed = 9f;
+			item.shootSpeed = 12f;
 			item.shoot = ModContent.ProjectileType<NebulatyphoonProj>();
 			item.width = 26;
 			item.height = 28;

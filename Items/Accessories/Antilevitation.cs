@@ -24,11 +24,6 @@ namespace Feldosbetterweaponsmod.Items.Accessories
 			player.buffImmune[164] = true;
 		}
 
-		public override int ChoosePrefix(UnifiedRandom rand) {
-			// When the item is given a prefix, only roll the best modifiers for accessories
-			return rand.Next(new int[] { PrefixID.Arcane, PrefixID.Lucky, PrefixID.Menacing, PrefixID.Quick, PrefixID.Violent, PrefixID.Warding });
-		}
-
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.FragmentVortex, 5);

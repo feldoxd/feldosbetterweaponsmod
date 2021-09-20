@@ -16,11 +16,11 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 125; // The damage your item deals
-			item.melee = true; // Whether your item is part of the melee class
-			item.width = 40; // The item texture's width
-			item.height = 40; // The item texture's height
-			item.useTime = 10; // The time span of using the weapon. Remember in terraria, 60 frames is a second.
+			item.damage = 125;
+			item.melee = true;
+			item.width = 40;
+			item.height = 40;
+			item.useTime = 10;
 			item.useAnimation = 20;
 			item.knockBack = 6;
 			item.value = Item.buyPrice(gold: 290);

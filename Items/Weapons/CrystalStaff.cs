@@ -12,26 +12,26 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			DisplayName.SetDefault("Crystal staff");
 			Tooltip.SetDefault("More powerfull version of Blizzard staff combined with Crystal storm");
-			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.staff[item.type] = true;
 		}
 		public override void SetDefaults()
 		{
-			item.damage = 42;
+			item.damage = 26;
 			item.magic = true;
 			item.mana = 26;
-			item.width = 32;
+			item.width = 47;
 			item.height = 47;
 			item.useTime = 4;
 			item.useAnimation = 25;
-			item.useStyle = ItemUseStyleID.HoldingUp;
+			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
 			item.knockBack = 5;
 			item.value = Item.buyPrice(gold: 140);
 			item.rare = ItemRarityID.Cyan;
 			item.UseSound = SoundID.Item20;
 			item.autoReuse = true;
-			item.shoot = ProjectileID.CrystalBullet;
-			item.shootSpeed = 16f;
+			item.shoot = ModContent.ProjectileType<CrystalBulletReplacement>();
+			item.shootSpeed = 26f;
 		}
 
 		public override void AddRecipes()
@@ -41,10 +41,12 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			recipe.AddIngredient(ItemID.CrystalStorm);
 			recipe.AddIngredient(ItemID.SoulofSight, 15);
 			recipe.AddIngredient(ItemID.FragmentNebula, 5);
+			recipe.AddIngredient(ItemID.LunarBar, 2);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
+
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			Vector2 target = Main.screenPosition + new Vector2((float)Main.mouseX, (float)Main.mouseY);

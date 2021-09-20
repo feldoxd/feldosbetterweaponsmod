@@ -13,23 +13,23 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 7; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			item.damage = 8;
 			item.crit = 8;
-			item.ranged = true; // sets the damage type to ranged
-			item.width = 56; // hitbox width of the item
-			item.height = 20; // hitbox height of the item
-			item.useTime = 18; // The item's use time in ticks (60 ticks == 1 second.)
-			item.useAnimation = 20; // The length of the item's use animation in ticks (60 ticks == 1 second.)
-			item.useStyle = ItemUseStyleID.HoldingOut; // how you use the item (swinging, holding out, etc)
-			item.noMelee = true; //so the item's animation doesn't do damage
-			item.knockBack = 4; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+			item.ranged = true;
+			item.width = 56;
+			item.height = 20;
+			item.useTime = 18;
+			item.useAnimation = 20;
+			item.useStyle = ItemUseStyleID.HoldingOut;
+			item.noMelee = true;
+			item.knockBack = 4;
 			item.value = Item.buyPrice(silver: 90);
-			item.rare = ItemRarityID.Blue; // the color that the item's name will be in-game
-			item.UseSound = SoundID.Item5; // The sound that this item plays when used.
-			item.autoReuse = false; // if you can hold click to automatically use it again
-			item.shoot = ProjectileID.PurificationPowder; //idk why but all the guns in the vanilla source have this
-			item.shootSpeed = 18f; // the speed of the projectile (measured in pixels per frame)
-			item.useAmmo = AmmoID.Arrow; // The "ammo Id" of the ammo item that this weapon uses. Note that this is not an item Id, but just a magic value.
+			item.rare = ItemRarityID.Blue;
+			item.UseSound = SoundID.Item5;
+			item.autoReuse = false;
+			item.shoot = ProjectileID.PurificationPowder;
+			item.shootSpeed = 18f;
+			item.useAmmo = AmmoID.Arrow; 
 		}
 
 		public override void AddRecipes()

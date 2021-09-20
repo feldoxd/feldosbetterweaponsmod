@@ -10,11 +10,11 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			DisplayName.SetDefault("Hellstone staff");
 			Tooltip.SetDefault("");
-			Item.staff[item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.staff[item.type] = true;
 		}
 		public override void SetDefaults()
 		{
-			item.damage = 25;
+			item.damage = 30;
 			item.magic = true;
 			item.mana = 6;
 			item.width = 40;

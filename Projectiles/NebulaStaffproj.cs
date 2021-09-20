@@ -25,7 +25,7 @@ namespace Feldosbetterweaponsmod.Projectiles
             {
                 Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, DustID.WitherLightning, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
             }
-            int num582 = Dust.NewDust(new Vector2(base.projectile.position.X, base.projectile.position.Y), base.projectile.width, base.projectile.height, 21, base.projectile.oldVelocity.X, base.projectile.oldVelocity.Y, 50, default(Color), 1.2f);
+            int num582 = Dust.NewDust(new Vector2(base.projectile.position.X, base.projectile.position.Y), base.projectile.width, base.projectile.height, DustID.VilePowder, base.projectile.oldVelocity.X, base.projectile.oldVelocity.Y, 50, default(Color), 1.2f);
             Main.dust[num582].noGravity = true;
             Dust dust = Main.dust[num582];
             dust.scale *= 1.75f;

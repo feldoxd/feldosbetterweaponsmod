@@ -20,14 +20,14 @@ namespace Feldosbetterweaponsmod.Tiles
 			TileObjectData.newTile.LavaDeath = false;
 			TileObjectData.addTile(Type);
 
-			AddMapEntry(new Color(200, 200, 200), Language.GetText("MapObject.MetalBar")); // localized text for "Metal Bar"
+			AddMapEntry(new Color(200, 200, 200), Language.GetText("MapObject.MetalBar"));
 		}
 
 		public override bool Drop(int i, int j)
 		{
 			Tile t = Main.tile[i, j];
 			int style = t.frameX / 18;
-			if (style == 0) // It can be useful to share a single tile with multiple styles. This code will let you drop the appropriate bar if you had multiple.
+			if (style == 0)
 			{
 				Item.NewItem(i * 16, j * 16, 16, 16, ModContent.ItemType<Items.Placeable.Nebulabar>());
 			}
