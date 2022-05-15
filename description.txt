@@ -3,6 +3,12 @@ My mod adds some upgraded variants of vanilla weapons and some new as well.
 Thanks for downloading.
 
 
+1.1.0 update:
+
+Added enchanted boomstick.
+Added boulder cannon.
+
+
 1.0.9 update:
 
 Fixed bug with crystal stuff.

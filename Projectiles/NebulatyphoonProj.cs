@@ -19,13 +19,12 @@ namespace Feldosbetterweaponsmod.Projectiles
 			projectile.height = 56;
 			projectile.penetrate = -1;
 			projectile.aiStyle = 71;
-			//projectile.alpha = 255;
 			projectile.timeLeft = 360;
 			projectile.friendly = true;
 			projectile.tileCollide = true;
-			projectile.extraUpdates = 2;
 			projectile.magic = true;
 			projectile.ignoreWater = true;
+			aiType = ProjectileID.Typhoon;
 		}
 
 		public override void AI()
@@ -41,6 +40,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 			}
 			Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, ModContent.DustType<NebulaDust>(), projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 		}
+
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
                 Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
@@ -55,9 +55,6 @@ namespace Feldosbetterweaponsmod.Projectiles
                 }
             return false;
         }
-        public override void Kill(int timeLeft)
-		{
-			//Main.PlaySound(SoundID.Item25, projectile.position);
-		}
+
 	}
 }

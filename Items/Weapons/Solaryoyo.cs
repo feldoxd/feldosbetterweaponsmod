@@ -49,7 +49,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 			if (Array.IndexOf(unwantedPrefixes, pre) > -1)
 			{
-
 				return false;
 			}
 

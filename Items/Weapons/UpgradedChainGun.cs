@@ -1,4 +1,4 @@
-	using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -10,8 +10,8 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Upgraded chain gun");
-			Tooltip.SetDefault("'It costs $400 000 dollars to fire this weapon for 12 seconds'\n58% chance to not consume ammo");
+			DisplayName.SetDefault("Vortex chain gun");
+			Tooltip.SetDefault("'It costs $400 000 dollars to fire this weapon for 12 seconds.'\n58% chance to not consume ammo");
 		}
 
 		public override void SetDefaults()
@@ -72,7 +72,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			if (target.type >= NPCID.MoonLordCore || NPCID.MoonLordHand >= target.type || target.type >= NPCID.MoonLordHead)
 				{
-					damage -= 18;
+					damage -= 20;
 				}
 		}
 	}

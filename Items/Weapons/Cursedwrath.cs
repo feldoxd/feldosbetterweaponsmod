@@ -22,12 +22,12 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.height = 40;
 			item.useTime = 10;
 			item.useAnimation = 20;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(gold: 290);
+			item.knockBack = 9;
+			item.value = Item.buyPrice(gold: 100);
 			item.rare = ItemRarityID.Purple;
 			item.UseSound = SoundID.Item9;
 			item.autoReuse = true;
-			item.crit = 24;
+			item.crit = 32;
 			item.shoot = ModContent.ProjectileType<Cursedwrathproj>();
 			item.shootSpeed = 16f;
 			item.useStyle = ItemUseStyleID.SwingThrow;
@@ -65,10 +65,19 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
 			target.AddBuff(BuffID.CursedInferno, 900);
+			target.AddBuff(BuffID.ShadowFlame, 900, true);
+			target.AddBuff(BuffID.OnFire, 900, true);
+			target.AddBuff(BuffID.Suffocation, 900, true);
 		}
+
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-
+			Vector2 position2 = position;
+			float speedX2 = speedX;
+			float speedY2 = speedY;
+			int type2;
+			int damage2 = damage;
+			float knockBack2 = knockBack;
 			Vector2 target = Main.screenPosition + new Vector2((float)Main.mouseX, (float)Main.mouseY);
 			float ceilingLimit = target.Y;
 			if (ceilingLimit > player.Center.Y - 200f)
@@ -94,7 +103,9 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 				speedY = heading.Y + Main.rand.Next(-40, 41) * 0.02f;
 				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, type, damage * 2, knockBack, player.whoAmI, 0f, ceilingLimit);
 			}
-			return false;
+			type2 = ProjectileID.TerraBeam;
+			Projectile.NewProjectile(position2.X, position2.Y, speedX2, speedY2, type2, damage2, knockBack2, player.whoAmI);
+			return true;
 		}
 	}
 }

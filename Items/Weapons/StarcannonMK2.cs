@@ -15,11 +15,11 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 76; 
+			item.damage = 110; 
 			item.ranged = true; 
 			item.width = 52;
 			item.height = 18;
-			item.useTime = 7; 
+			item.useTime = 10; 
 			item.useAnimation = 20;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.noMelee = true;
@@ -45,16 +45,12 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{	
-			float rotation = MathHelper.ToRadians(5);
+			float rotation = MathHelper.ToRadians(-3);
 			position += Vector2.Normalize(new Vector2(speedX, speedY));
 				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedBy(MathHelper.Lerp(-rotation, rotation, 1 / (5 - 1))) * .90f;
 				Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
 			
 			return true;
-		}
-		public override Vector2? HoldoutOffset()
-		{
-			return new Vector2(-15, 0);
 		}
 	}
 }

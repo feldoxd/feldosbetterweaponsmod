@@ -11,12 +11,11 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Nebula staff");
-			Tooltip.SetDefault("");
 			Item.staff[item.type] = true;
 		}
 		public override void SetDefaults()
 		{
-			item.damage = 150;
+			item.damage = 170;
 			item.magic = true;
 			item.mana = 15;
 			item.width = 40;

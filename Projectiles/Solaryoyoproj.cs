@@ -16,16 +16,16 @@ namespace Feldosbetterweaponsmod.Projectiles
 
 		public override void SetDefaults()
 		{
-			projectile.extraUpdates = 0;
+			//projectile.extraUpdates = 4;
 			projectile.width = 14;
 			projectile.height = 14;
-			projectile.aiStyle = 99;
 			projectile.aiStyle = 99;
 			projectile.friendly = true;
 			projectile.penetrate = -1;
 			projectile.melee = true;
 			projectile.light = 0.3f;
 			projectile.scale = 1f;
+			projectile.netImportant = true;
 
 		}
 

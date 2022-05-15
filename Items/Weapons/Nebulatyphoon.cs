@@ -16,7 +16,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void SetDefaults()
 		{
 			item.mana = 16;
-			item.damage = 99;
+			item.damage = 100;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.shootSpeed = 12f;
 			item.shoot = ModContent.ProjectileType<NebulatyphoonProj>();
@@ -24,12 +24,12 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			item.height = 28;
 			item.UseSound = SoundID.Item84;
 			item.useAnimation = 40;
-			item.useTime = 26;
+			item.useTime = 18;
 			item.autoReuse = true;
 			item.rare = ItemRarityID.Yellow;
 			item.noMelee = true;
 			item.knockBack = 5f;
-			item.scale = 0.9f;
+			//item.scale = 0.9f;
 			item.value = Item.sellPrice(gold: 8);
 			item.magic = true;
 		}

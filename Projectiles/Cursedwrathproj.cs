@@ -8,16 +8,12 @@ namespace Feldosbetterweaponsmod.Projectiles
 {
 	public class Cursedwrathproj : ModProjectile
 	{
-        public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Cursed wrath projectile");
-		}
 		public override void SetDefaults()
 		{
 			projectile.width = 34;
 			projectile.height = 90;
 			projectile.friendly = true;
-			projectile.penetrate = 2;
+			projectile.penetrate = -1;
 			projectile.alpha = 255;
 			projectile.tileCollide = false;
 			projectile.melee = true;
@@ -45,7 +41,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 			if (Main.rand.Next(16) == 0)
 			{
 				Vector2 value3 = Vector2.UnitX.RotatedByRandom(1.5707963705062866).RotatedBy(base.projectile.velocity.ToRotation());
-				int num76 = Dust.NewDust(base.projectile.position, base.projectile.width, base.projectile.height, 58, base.projectile.velocity.X * 0.5f, base.projectile.velocity.Y * 0.5f, 150, default(Color), 1.2f);
+				int num76 = Dust.NewDust(base.projectile.position, base.projectile.width, base.projectile.height, DustID.Enchanted_Pink, base.projectile.velocity.X * 0.5f, base.projectile.velocity.Y * 0.5f, 150, default, 1.2f);
 				Main.dust[num76].velocity = value3 * 0.66f;
 				Main.dust[num76].position = base.projectile.Center + value3 * 12f;
 			}
