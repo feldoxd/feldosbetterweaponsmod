@@ -1,4 +1,4 @@
-	using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -11,8 +11,8 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Upgraded chain gun");
-			Tooltip.SetDefault("It costs $400 000 dollars to fire this for 12 seconds.");
+			DisplayName.SetDefault("Vortex chain gun");
+			Tooltip.SetDefault("'It costs $400 000 dollars to fire this weapon for 12 seconds.'\n58% chance to not consume ammo");
 		}
 
 		public override void SetDefaults()
@@ -25,7 +25,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.useAnimation = 2; // The length of the Item's use animation in ticks (60 ticks == 1 second.)
 			Item.useStyle = ItemUseStyleID.Shoot; // how you use the Item (swinging, holding out, etc)
 			Item.noMelee = true; //so the Item's animation doesn't do damage
-			Item.knockBack = 5; // Sets the Item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+			Item.knockBack = 2; // Sets the Item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.value = Item.sellPrice(gold: 23);
 			Item.rare = ItemRarityID.Cyan; // the color that the Item's name will be in-game
 			Item.UseSound = SoundID.Item40; // The sound that this Item plays when used.
@@ -71,7 +71,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			if (target.type >= NPCID.MoonLordCore || NPCID.MoonLordHand >= target.type || target.type >= NPCID.MoonLordHead)
 				{
-					damage -= 18;
+					damage -= 20;
 				}
 		}
 	}

@@ -2,5 +2,5 @@ displayName = Feldo's better weapons mod
 author = feldo
 version = 1.1.0
 hideCode = false
-hideResources = false
+hideResources = true
 homepage = https://github.com/feldoxd/feldosbetterweaponsmod/

@@ -15,7 +15,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			Item.damage = 7; // Sets the Item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.damage = 8; // Sets the Item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.crit = 8;
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 56; // hitbox width of the Item

@@ -17,15 +17,15 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void SetDefaults()
 		{
 			Item.mana = 16;
-			Item.damage = 99;
+			Item.damage = 100;
 			Item.useStyle = ItemUseStyleID.None;
-			Item.shootSpeed = 9f;
+			Item.shootSpeed = 12f;
 			Item.shoot = ModContent.ProjectileType<NebulatyphoonProj>();
 			Item.width = 26;
 			Item.height = 28;
 			Item.UseSound = SoundID.Item84;
 			Item.useAnimation = 40;
-			Item.useTime = 26;
+			Item.useTime = 18;
 			Item.autoReuse = true;
 			Item.rare = ItemRarityID.Yellow;
 			Item.noMelee = true;

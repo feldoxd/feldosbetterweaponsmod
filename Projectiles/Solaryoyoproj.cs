@@ -24,7 +24,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 
 		public override void SetDefaults()
 		{
-			Projectile.extraUpdates = 0;
+			Projectile.extraUpdates = 4;
 			Projectile.width = 14;
 			Projectile.height = 14;
 			Projectile.aiStyle = 99;
@@ -32,6 +32,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 			Projectile.friendly = true;
 			Projectile.penetrate = -1;
 			Projectile.DamageType = DamageClass.Melee;
+			Projectile.netImportant = true;
 			Projectile.light = 0.3f;
 			Projectile.scale = 1f;
 

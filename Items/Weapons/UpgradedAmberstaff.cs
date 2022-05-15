@@ -14,7 +14,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		}
 		public override void SetDefaults()
 		{
-			Item.damage = 25;
+			Item.damage = 30;
 			Item.DamageType = DamageClass.Magic;
 			Item.mana = 6;
 			Item.width = 40;

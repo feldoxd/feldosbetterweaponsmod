@@ -16,6 +16,7 @@ namespace Feldosbetterweaponsmod.Projectiles
             Projectile.ignoreWater = true;
             Projectile.penetrate = -1;
             Projectile.timeLeft = 600;
+            Projectile.extraUpdates = 10;
         }
 
         public override void AI()
@@ -39,9 +40,6 @@ namespace Feldosbetterweaponsmod.Projectiles
                 Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.SilverFlame, Projectile.oldVelocity.X * 0.5f, Projectile.oldVelocity.Y * 0.5f);
             }
             Terraria.Audio.SoundEngine.PlaySound(SoundID.Item25, Projectile.position);
-        }
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
         }
     }
 }

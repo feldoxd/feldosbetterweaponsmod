@@ -41,6 +41,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 			}
 			Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, ModContent.DustType<NebulaDust>(), Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f);
 		}
+
         public override bool OnTileCollide(Vector2 oldVelocity)
         {
                 Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
@@ -55,9 +56,6 @@ namespace Feldosbetterweaponsmod.Projectiles
                 }
             return false;
         }
-        public override void Kill(int timeLeft)
-		{
-			//Main.PlaySound(SoundID.Item25, Projectile.position);
-		}
+
 	}
 }

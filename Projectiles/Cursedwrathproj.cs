@@ -17,7 +17,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 			Projectile.width = 34;
 			Projectile.height = 90;
 			Projectile.friendly = true;
-			Projectile.penetrate = 2;
+			Projectile.penetrate =-1;
 			Projectile.alpha = 255;
 			Projectile.tileCollide = false;
 			Projectile.DamageType = DamageClass.Melee;

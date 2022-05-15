@@ -1,7 +1,19 @@
 My mod adds some upgraded variants of vanilla weapons and some new as well.
-Some accesories too. (1 currently lol)
+
+Thanks for downloading.
 
 
-Last update(probably). Thanks for downloading.
+1.1.0 update:
+
+Added enchanted boomstick.
+Added boulder cannon.
+
+
+1.0.9 update:
+
+Fixed bug with crystal stuff.
+Many rebalances.
+Removed upgraded mega shark.
+
 
 Ported to 1.4 tmodloader.

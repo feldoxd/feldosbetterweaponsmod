@@ -28,11 +28,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 		{
 			Main.player[Projectile.owner].Counterweight(Projectile.Center, Projectile.damage, Projectile.knockBack);
 			Projectile.ai[1] = 1000f;
-			/*Projectile.alpha += 8;
-			if (Projectile.alpha > 255)
-			{
-				Projectile.alpha = 255;
-			}*/
+
 		}
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{

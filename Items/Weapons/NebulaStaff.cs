@@ -12,12 +12,11 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Nebula staff");
-			Tooltip.SetDefault("");
-			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.staff[item.type] = true;
 		}
 		public override void SetDefaults()
 		{
-			Item.damage = 150;
+			Item.damage = 170;
 			Item.DamageType = DamageClass.Magic;
 			Item.mana = 15;
 			Item.width = 40;

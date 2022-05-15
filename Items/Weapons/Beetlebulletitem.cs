@@ -20,7 +20,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.height = 8;
 			Item.maxStack = 9999;
 			Item.consumable = true;             //You need to set the Item consumable so that the ammo would automatically consumed
-			Item.knockBack = 1.5f;
+			Item.knockBack = 4.5f;
 			Item.value = Item.buyPrice(copper: 75);
 			Item.rare = ItemRarityID.Yellow;
 			Item.shoot = ModContent.ProjectileType<Projectiles.Beetlebullet>();   //The projectile shoot when your weapon using this ammo

@@ -16,15 +16,15 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			Item.damage = 89; // Sets the Item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.damage = 110; // Sets the Item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 52; // hitbox width of the Item
 			Item.height = 18; // hitbox height of the Item
-			Item.useTime = 7; // The Item's use time in ticks (60 ticks == 1 second.)
+			Item.useTime = 10; // The Item's use time in ticks (60 ticks == 1 second.)
 			Item.useAnimation = 20; // The length of the Item's use animation in ticks (60 ticks == 1 second.)
 			Item.useStyle = ItemUseStyleID.Shoot; // how you use the Item (swinging, holding out, etc)
 			Item.noMelee = true; //so the Item's animation doesn't do damage
-			Item.knockBack = 4f; // Sets the Item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+			Item.knockBack = 0f; // Sets the Item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.value = Item.sellPrice(gold: 12);
 			Item.rare = ItemRarityID.Yellow; // the color that the Item's name will be in-game
 			Item.UseSound = SoundID.Item11; // The sound that this Item plays when used.
@@ -51,10 +51,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Projectile.NewProjectile(source, position, velocity, type, damage, knockback);
 			
 			return true;
-		}
-		public override Vector2? HoldoutOffset()
-		{
-			return new Vector2(-15, 0);
 		}
 	}
 }

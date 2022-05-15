@@ -10,20 +10,20 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Clockwork vortex rocket launcher");
-			Tooltip.SetDefault("Shoots 3 rockets for price of 1!");
+			DisplayName.SetDefault("Vortex launcher");
+			Tooltip.SetDefault("Shoots 2 rockets for price of 1!");
 		}
 
 		public override void SetDefaults()
 		{
-			Item.damage = 94; // Sets the Item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.damage = 100; // Sets the Item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 47; // hitbox width of the Item
 			Item.height = 20; // hitbox height of the Item
-			Item.useTime = 4; // The Item's use time in ticks (60 ticks == 1 second.)
+			Item.useTime = 7; // The Item's use time in ticks (60 ticks == 1 second.)
 			Item.useAnimation = 12; // The length of the Item's use animation in ticks (60 ticks == 1 second.)
 			Item.useStyle = ItemUseStyleID.Shoot; // how you use the Item (swinging, holding out, etc)
-			Item.reuseDelay = 14;
+			Item.reuseDelay = 20;
 			Item.noMelee = true; //so the Item's animation doesn't do damage
 			Item.knockBack = 4; // Sets the Item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.value = Item.buyPrice(gold: 5);
@@ -49,10 +49,9 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			return !(player.itemAnimation < Item.useAnimation - 2);
 		}
 
-		// Help, my gun isn't being held at the handle! Adjust these 2 numbers until it looks right.
 		public override Vector2? HoldoutOffset()
 		{
-			return new Vector2(10, 0);
+			return new Vector2(-10, 0);
 		}
 
         // How can I make the shots appear out of the muzzle exactly?
