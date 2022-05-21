@@ -43,9 +43,9 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			.AddTile(TileID.MythrilAnvil)
 			.Register();
 		}
-        public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-		{	
-			float rotation = MathHelper.ToRadians(5);
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+        float rotation = MathHelper.ToRadians(5);
 			position += Vector2.Normalize(position);
 				Vector2 perturbedSpeed = position.RotatedBy(MathHelper.Lerp(-rotation, rotation, 1 / (5 - 1))) * .90f; // Watch out for dividing by 0 if there is only 1 projectile.
 			Projectile.NewProjectile(source, position, velocity, type, damage, knockback);

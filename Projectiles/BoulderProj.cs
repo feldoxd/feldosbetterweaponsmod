@@ -8,7 +8,7 @@ namespace Feldosbetterweaponsmod.Projectiles
     public class BoulderProj : ModProjectile
     {
 
-		public override string Texture => "Terraria/Projectile_" + ProjectileID.Boulder;
+		public override string Texture => "Terraria/Images/Projectile_" + ProjectileID.Boulder;
 
 		public override void SetStaticDefaults()
 		{
@@ -17,13 +17,11 @@ namespace Feldosbetterweaponsmod.Projectiles
 
 		public override void SetDefaults()
 		{
-			projectile.CloneDefaults(ProjectileID.BoulderStaffOfEarth);
-			projectile.magic = true;
-			projectile.ranged = false;
-			projectile.friendly = true;
-			projectile.penetrate = int.MaxValue;
-			projectile.ranged = true;
-			aiType = ProjectileID.BoulderStaffOfEarth;
+			Projectile.CloneDefaults(ProjectileID.BoulderStaffOfEarth);
+			Projectile.DamageType = DamageClass.Magic;
+			Projectile.friendly = true;
+			Projectile.penetrate = int.MaxValue;
+			AIType = ProjectileID.BoulderStaffOfEarth;
 		}
 
     }

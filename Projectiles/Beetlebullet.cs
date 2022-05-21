@@ -11,7 +11,6 @@ namespace Feldosbetterweaponsmod.Projectiles
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Beetle Bullet");
-            ProjectileID.Sets.CountsAsHoming[Projectile.type] = true;
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 5;    //The length of old position to be recorded
             ProjectileID.Sets.TrailingMode[Projectile.type] = 5;        //The recording mode
         }

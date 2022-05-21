@@ -68,14 +68,14 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			target.AddBuff(BuffID.OnFire, 900, true);
 			target.AddBuff(BuffID.Suffocation, 900, true);
 		}
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
 			Vector2 position2 = position;
-			float speedX2 = speedX;
-			float speedY2 = speedY;
+			float speedX2 = velocity.X;
+			float speedY2 = velocity.Y;
 			int type2;
 			int damage2 = damage;
-			float knockBack2 = knockBack;
+			float knockBack2 = knockback;
 			Vector2 target = Main.screenPosition + new Vector2((float)Main.mouseX, (float)Main.mouseY);
 			float ceilingLimit = target.Y;
 			if (ceilingLimit > player.Center.Y - 200f)
@@ -103,7 +103,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 				Projectile.NewProjectile(source ,position, velocity, type, damage * 2, knockback, player.whoAmI, 0f, ceilingLimit);
 			}
 			type2 = ProjectileID.TerraBeam;
-			Projectile.NewProjectile(position2.X, position2.Y, speedX2, speedY2, type2, damage2, knockBack2, player.whoAmI);
+			Projectile.NewProjectile(source, position2, velocity, type2, damage2, knockBack2, player.whoAmI);
 			return true;
 		}
 	}

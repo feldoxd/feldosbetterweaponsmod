@@ -11,8 +11,8 @@ namespace Feldosbetterweaponsmod.Projectiles
 	{
         public override void SetStaticDefaults()
         {
-            ProjectileID.Sets.CountsAsHoming[Projectile.type] = true;
         }
+
         public override void SetDefaults()
 		{
 			Projectile.width = 56;

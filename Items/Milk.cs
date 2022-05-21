@@ -18,7 +18,7 @@ namespace Feldosbetterweaponsmod.Items
 			Item.maxStack = 9999;
 			Item.useStyle = ItemUseStyleID.EatFood;
 			Item.UseSound = SoundID.Item3;
-			Item.value = Item.buyPrice(silver: 20);
+			Item.value = Item.buyPrice(silver: 20, copper: 1);
 			Item.useAnimation = 17;
 			Item.useTime = 17;
 			Item.rare = ItemRarityID.White;

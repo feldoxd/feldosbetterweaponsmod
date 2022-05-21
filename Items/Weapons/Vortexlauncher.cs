@@ -44,10 +44,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			.AddTile(TileID.LunarCraftingStation)
 			.Register();
 		}
-		public override bool ConsumeAmmo(Player player)
-		{
-			return !(player.itemAnimation < Item.useAnimation - 2);
-		}
 
 		public override Vector2? HoldoutOffset()
 		{
@@ -56,9 +52,9 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
         // How can I make the shots appear out of the muzzle exactly?
         // Also, when I do this, how do I prevent shooting through tiles?
-        public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-		{
-			Vector2 muzzleOffset = Vector2.Normalize(position) * 25f;
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+        Vector2 muzzleOffset = Vector2.Normalize(position) * 25f;
 			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
 			{
 				position += muzzleOffset;

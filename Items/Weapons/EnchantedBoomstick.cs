@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using Terraria.DataStructures;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -14,45 +15,44 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 15;
-			item.crit = 6;
-			item.ranged = true;
-			item.width = 40;
-			item.height = 16;
-			item.useTime = 40;
-			item.useAnimation = 20;
-			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.noMelee = true;
-			item.knockBack = 6;
-			item.value = Item.buyPrice(silver: 90);
-			item.rare = ItemRarityID.Blue;
-			item.UseSound = SoundID.Item36;
-			item.autoReuse = false;
-			item.shoot = ProjectileID.PurificationPowder;
-			item.shootSpeed = 16f;
-			item.useAmmo = AmmoID.Bullet;
+			Item.damage = 15;
+			Item.crit = 6;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 40;
+			Item.height = 16;
+			Item.useTime = 40;
+			Item.useAnimation = 20;
+			Item.useStyle = ItemUseStyleID.HoldUp;
+			Item.noMelee = true;
+			Item.knockBack = 6;
+			Item.value = Item.buyPrice(silver: 90);
+			Item.rare = ItemRarityID.Blue;
+			Item.UseSound = SoundID.Item36;
+			Item.autoReuse = false;
+			Item.shoot = ProjectileID.PurificationPowder;
+			Item.shootSpeed = 16f;
+			Item.useAmmo = AmmoID.Bullet;
 		}
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Boomstick);
-			recipe.AddIngredient(ItemID.FallenStar, 15);
-			recipe.AddIngredient(ItemID.MeteoriteBar, 5);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe()
+			.AddIngredient(ItemID.Boomstick)
+			.AddIngredient(ItemID.FallenStar, 15)
+			.AddIngredient(ItemID.MeteoriteBar, 5)
+			.AddTile(TileID.Anvils)
+			.Register();
 		}
 
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
 			int numberProjectiles = 4 + Main.rand.Next(2); // 4 or 5 shots
 			for (int i = 0; i < numberProjectiles; i++)
 			{
-				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
-				Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
+				Vector2 perturbedSpeed = position.RotatedByRandom(MathHelper.ToRadians(10));
+				Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
 			}
-				Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY)) * 10f;
+				Vector2 muzzleOffset = Vector2.Normalize(velocity) * 10f;
 			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
 			{
 				position += muzzleOffset;

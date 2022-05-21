@@ -1,5 +1,6 @@
 ﻿using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.DataStructures;
 using Terraria;
 using System;
 using Microsoft.Xna.Framework;
@@ -51,7 +52,8 @@ namespace Feldosbetterweaponsmod.Projectiles
 			}
 			if (Main.rand.Next(48) == 0)
 			{
-				int num77 = Gore.NewGore(base.Projectile.Center, new Vector2(base.Projectile.velocity.X * 0.2f, base.Projectile.velocity.Y * 0.2f), 16);
+				EntitySource_TileBreak source = new ((int)Projectile.position.X, (int)Projectile.position.Y);
+				int num77 = Gore.NewGore(source, new Vector2(base.Projectile.velocity.X * 0.2f), new Vector2(base.Projectile.velocity.Y * 0.2f), 16);
 				Gore gore = Main.gore[num77];
 				gore.velocity *= 0.66f;
 				gore = Main.gore[num77];

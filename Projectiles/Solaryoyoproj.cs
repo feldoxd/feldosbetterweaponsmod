@@ -1,7 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
-using Terraria.DataStructures;
 using Terraria.ModLoader;
+using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 
 namespace Feldosbetterweaponsmod.Projectiles
@@ -89,7 +89,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 					}
 				}
 				velocity *= 1.3f;
-				ProjectileSource_Item_WithAmmo source = null;
+				IEntitySource source = null;
 				Projectile.NewProjectile( source,base.Projectile.Center.X - velocity.X, base.Projectile.Center.Y - velocity.Y, velocity.X, velocity.Y, ModContent.ProjectileType<Solaryoyofireproj>(), Projectile.damage, Projectile.knockBack, Projectile.owner);
 				Projectile.localAI[1] = 0f;
 			}

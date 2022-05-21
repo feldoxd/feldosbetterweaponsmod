@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
-	public class UnlimitedBeetlebulletitem : ModItem
+	public class UnlimitedBeetlebulletItem : ModItem
 	{
 
 
@@ -16,26 +16,26 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 		public override void SetDefaults()
 		{
-			item.damage = 10;
-			item.ranged = true;
-			item.width = 8;
-			item.height = 8;
-			item.maxStack = 1;
-			item.consumable = false;
-			item.knockBack = 4.5f;
-			item.value = Item.buyPrice(copper: 75);
-			item.rare = ItemRarityID.Yellow;
-			item.shoot = ModContent.ProjectileType<Projectiles.Beetlebullet>();
-			item.shootSpeed = 16f;
-			item.ammo = AmmoID.Bullet;
+			Item.damage = 10;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 8;
+			Item.height = 8;
+			Item.maxStack = 1;
+			Item.consumable = false;
+			Item.knockBack = 4.5f;
+			Item.value = Item.buyPrice(copper: 75);
+			Item.rare = ItemRarityID.Yellow;
+			Item.shoot = ModContent.ProjectileType<Projectiles.Beetlebullet>();
+			Item.shootSpeed = 16f;
+			Item.ammo = AmmoID.Bullet;
 		}
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ModContent.ItemType<Beetlebulletitem>(), 3996);
-			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this, 1);
-			recipe.AddRecipe();
+			CreateRecipe()
+			.AddIngredient(ItemID.BlizzardStaff)
+			.AddIngredient(ModContent.ItemType<BeetlebulletItem>(), 9999)
+			.AddTile(TileID.MythrilAnvil)
+			.Register();
 		}
 	}
 }
