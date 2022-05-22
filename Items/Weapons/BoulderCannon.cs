@@ -25,7 +25,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.height = 30;
 			Item.useTime = 40;
 			Item.useAnimation = 20;
-			Item.useStyle = ItemUseStyleID.HoldUp;
+			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.noMelee = true;
 			Item.knockBack = 8;
 			Item.value = Item.buyPrice(silver: 90);

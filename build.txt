@@ -3,4 +3,3 @@ author = feldo
 version = 1.1.0
 hideCode = false
 hideResources = true
-homepage = https://github.com/feldoxd/feldosbetterweaponsmod/

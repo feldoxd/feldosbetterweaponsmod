@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
-	public class UnlimitedBeetlebulletItem : ModItem
+	public class UnlimitedBeetlebulletitem : ModItem
 	{
 
 
@@ -33,7 +33,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			CreateRecipe()
 			.AddIngredient(ItemID.BlizzardStaff)
-			.AddIngredient(ModContent.ItemType<BeetlebulletItem>(), 9999)
+			.AddIngredient(ModContent.ItemType<Beetlebulletitem>(), 9999)
 			.AddTile(TileID.MythrilAnvil)
 			.Register();
 		}

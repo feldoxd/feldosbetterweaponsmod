@@ -22,7 +22,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.height = 16;
 			Item.useTime = 40;
 			Item.useAnimation = 20;
-			Item.useStyle = ItemUseStyleID.HoldUp;
+			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.noMelee = true;
 			Item.knockBack = 6;
 			Item.value = Item.buyPrice(silver: 90);
@@ -47,17 +47,20 @@ namespace Feldosbetterweaponsmod.Items.Weapons
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
 			int numberProjectiles = 4 + Main.rand.Next(2); // 4 or 5 shots
-			for (int i = 0; i < numberProjectiles; i++)
-			{
-				Vector2 perturbedSpeed = position.RotatedByRandom(MathHelper.ToRadians(10));
-				Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
-			}
-				Vector2 muzzleOffset = Vector2.Normalize(velocity) * 10f;
+
+			Vector2 muzzleOffset = Vector2.Normalize(velocity) * 10f;
 			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
 			{
 				position += muzzleOffset;
 			}
+
+			for (int i = 0; i < numberProjectiles; i++)
+			{
+				Vector2 perturbedSpeed = position.RotatedByRandom(MathHelper.ToRadians(10));
+				Projectile.NewProjectile(source, position, velocity + perturbedSpeed, type, damage, knockback, player.whoAmI);
+			}
 			type = ProjectileID.HallowStar;
+			Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
 			return true;
 		}
 		public override Vector2? HoldoutOffset()
