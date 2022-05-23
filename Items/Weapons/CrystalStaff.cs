@@ -48,6 +48,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		}
 		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
+			float speedX = velocity.X, speedY = velocity.Y;
 			Vector2 target = Main.screenPosition + new Vector2((float)Main.mouseX, (float)Main.mouseY);
 			float ceilingLimit = target.Y;
 			if (ceilingLimit > player.Center.Y - 200f)
@@ -68,11 +69,10 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 					heading.Y = 20f;
 				}
 				heading.Normalize();
-				//heading *= new Vector2(speedX, speedY).Length();
-				//speedX = heading.X;
-				//speedY = heading.Y + Main.rand.Next(-40, 41) * 0.02f;
-
-				Projectile.NewProjectile(source ,position, velocity, type, damage * 2, knockback, player.whoAmI, 0f, ceilingLimit);
+				heading *= new Vector2(speedX, speedY).Length();
+				speedX = heading.X;
+				speedY = heading.Y + Main.rand.Next(-40, 41) * 0.02f;
+				Projectile.NewProjectile(source, new Vector2(position.X, position.Y), new Vector2(speedX, speedY), type, (int)(damage * 1.25), knockback, player.whoAmI, 0f, ceilingLimit);
 			}
 			return false;
 		}

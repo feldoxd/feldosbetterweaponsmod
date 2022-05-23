@@ -1,4 +1,5 @@
-﻿using Terraria.ID;
+﻿using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Feldosbetterweaponsmod.Projectiles
@@ -20,5 +21,6 @@ namespace Feldosbetterweaponsmod.Projectiles
 		{
 			Projectile.type = 92;
 		}
+
 	}
 }

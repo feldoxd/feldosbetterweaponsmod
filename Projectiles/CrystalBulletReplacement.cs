@@ -27,15 +27,15 @@ namespace Feldosbetterweaponsmod.Projectiles
 			return true;
 		}
 
-		/*public override bool OnTileCollide(Vector2 oldVelocity)
+		public override bool OnTileCollide(Vector2 oldVelocity)
 		{
 			for (int i = 0; i < 5; i++)
 			{
 				EntitySource_TileBreak source = new((int)Projectile.position.X, (int)Projectile.position.Y);
-				int a = Projectile.NewProjectile(source, Main.rand.Next(-10, 11) * .25f, Main.rand.Next(-10, -5) * .25f, ProjectileID.CrystalShard, (int)(Projectile.damage * .5f), 0, Projectile.owner);
-				Main.Projectile[a].aiStyle = 1;
-				Main.Projectile[a].tileCollide = true;
-				Main.Projectile[a].DamageType = DamageClass.Magic;
+				int a = Projectile.NewProjectile(source, new Vector2(Main.rand.Next(-10, 11) * .25f), new Vector2(Main.rand.Next(-10, -5) * .25f), ProjectileID.CrystalShard, (int)(Projectile.damage * .5f), 0, Projectile.owner);
+				Main.projectile[a].aiStyle = 1;
+				Main.projectile[a].tileCollide = true;
+				Main.projectile[a].DamageType = DamageClass.Magic;
 			}
 			return true;
 		}
@@ -43,12 +43,13 @@ namespace Feldosbetterweaponsmod.Projectiles
         {
 			for (int i = 0; i < 5; i++)
 			{
-				int a = Projectile.NewProjectile(Projectile.Center.X, Projectile.Center.Y, - 16f, Main.rand.Next(-10, 11) * .25f, Main.rand.Next(-10, -5) * .25f, ProjectileID.CrystalShard, (int)(Projectile.damage * .5f), 0, Projectile.owner);
-				Projectile[a].aiStyle = 1;
-				Projectile[a].tileCollide = true;
-				Projectile[a].DamageType = DamageClass.Magic;
+				EntitySource_TileBreak source = new((int)Projectile.position.X, (int)Projectile.position.Y);
+				int a = Projectile.NewProjectile(source,  16f, Main.rand.Next(-10, 11) * .25f, Main.rand.Next(-10, -5) * .25f, ProjectileID.CrystalShard, (int)(Projectile.damage * .5f), 0, Projectile.owner);
+				Main.projectile[a].aiStyle = 1;
+				Main.projectile[a].tileCollide = true;
+				Main.projectile[a].DamageType = DamageClass.Magic;
 			}
 			return;
-		}*/
+		}
     }
 }

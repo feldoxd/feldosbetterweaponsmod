@@ -21,7 +21,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.width = 52; // hitbox width of the Item
 			Item.height = 18; // hitbox height of the Item
 			Item.useTime = 10; // The Item's use time in ticks (60 ticks == 1 second.)
-			Item.useAnimation = 20; // The length of the Item's use animation in ticks (60 ticks == 1 second.)
+			Item.useAnimation = 10; // The length of the Item's use animation in ticks (60 ticks == 1 second.)
 			Item.useStyle = ItemUseStyleID.Shoot; // how you use the Item (swinging, holding out, etc)
 			Item.noMelee = true; //so the Item's animation doesn't do damage
 			Item.knockBack = 0f; // Sets the Item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
@@ -43,14 +43,25 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			.AddTile(TileID.MythrilAnvil)
 			.Register();
 		}
+
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-        float rotation = MathHelper.ToRadians(5);
+		  float rotation = MathHelper.ToRadians(5);
 			position += Vector2.Normalize(position);
 				Vector2 perturbedSpeed = position.RotatedBy(MathHelper.Lerp(-rotation, rotation, 1 / (5 - 1))) * .90f; // Watch out for dividing by 0 if there is only 1 projectile.
-			Projectile.NewProjectile(source, position, velocity, type, damage, knockback);
+			Projectile.NewProjectile(source, position, perturbedSpeed, type, damage, knockback);
 			
 			return true;
 		}
+
+		public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+		{
+			Vector2 muzzleOffset = Vector2.Normalize(velocity) * 40;
+			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
+			{
+				position += muzzleOffset;
+			}
+		}
+
 	}
 }
