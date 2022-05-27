@@ -7,6 +7,7 @@ Thanks for downloading.
 Added enchanted boomstick.
 Added boulder cannon.
 Again many rebalances.
+Many fixes.
 Ported to 1.4.
 
 1.0.9 update:

@@ -32,7 +32,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.rare = ItemRarityID.Cyan; // the color that the Item's name will be in-game
 			Item.UseSound = SoundID.Item40; // The sound that this Item plays when used.
 			Item.autoReuse = true; // if you can hold click to automatically use it again
-			Item.shoot = ProjectileID.VortexBeaterRocket; //idk why but all the guns in the vanilla source have this //ProjectileID.PurificationPowder
+			Item.shoot = ProjectileID.PurificationPowder; //idk why but all the guns in the vanilla source have this //ProjectileID.PurificationPowder
 			Item.shootSpeed = 24f; // the speed of the projectile (measured in pixels per frame)
 			Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo Item that this weapon uses. Note that this is not an Item Id, but just a magic value.
 		}
