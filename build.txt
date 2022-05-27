@@ -1,5 +1,5 @@
 displayName = Feldo's better weapons mod
 author = feldo
 version = 1.1.0
-hideCode = false
+hideCode = true
 hideResources = true

@@ -1,6 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -11,6 +12,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			DisplayName.SetDefault("Hellstone staff");
 			Tooltip.SetDefault("");
 			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 		public override void SetDefaults()
 		{

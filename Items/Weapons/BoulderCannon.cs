@@ -1,6 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
 using Feldosbetterweaponsmod.Projectiles;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
@@ -12,6 +13,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Boulder cannon");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()
@@ -33,7 +35,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.UseSound = SoundID.Item11;
 			Item.autoReuse = true;
 			Item.shoot = ModContent.ProjectileType<BoulderProj>();
-			Item.shootSpeed = 10f;
+			Item.shootSpeed = 5f;
 			Item.useAmmo = ItemID.Boulder;
 		}
 

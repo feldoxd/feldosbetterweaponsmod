@@ -5,6 +5,7 @@ using Terraria.ModLoader;
 using Feldosbetterweaponsmod.Projectiles;
 using Feldosbetterweaponsmod.Items.Placeable;
 using Terraria.DataStructures;
+using Terraria.GameContent.Creative;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -13,6 +14,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Cursed wrath");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()

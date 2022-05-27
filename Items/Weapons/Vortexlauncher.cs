@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.Audio;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
+using Terraria.GameContent.Creative;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -13,6 +14,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			DisplayName.SetDefault("Vortex launcher");
 			Tooltip.SetDefault("Shoots 3 rockets for price of 1.");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()

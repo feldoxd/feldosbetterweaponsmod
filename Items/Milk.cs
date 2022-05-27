@@ -1,6 +1,7 @@
 ﻿using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
 
 namespace Feldosbetterweaponsmod.Items
 {
@@ -9,6 +10,7 @@ namespace Feldosbetterweaponsmod.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Milk");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 255;
 		}
 
 		public override void SetDefaults()

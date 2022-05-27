@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Terraria.Utilities;
+using Terraria.GameContent.Creative;
 
 namespace Feldosbetterweaponsmod.Items.Accessories
 {
@@ -11,6 +12,7 @@ namespace Feldosbetterweaponsmod.Items.Accessories
 		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("Imunity to levitation.");
 			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(32, 3));
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults() {

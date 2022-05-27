@@ -9,21 +9,15 @@ namespace Feldosbetterweaponsmod.Projectiles
 {
 	public class NebulatyphoonProj : ModProjectile
 	{
-        public override void SetStaticDefaults()
-        {
-        }
-
         public override void SetDefaults()
 		{
 			Projectile.width = 56;
 			Projectile.height = 56;
 			Projectile.penetrate = -1;
 			Projectile.aiStyle = 71;
-			//Projectile.alpha = 255;
-			Projectile.timeLeft = 360;
+			Projectile.timeLeft = 560;
 			Projectile.friendly = true;
 			Projectile.tileCollide = true;
-			Projectile.extraUpdates = 2;
 			Projectile.DamageType = DamageClass.Magic;
 			Projectile.ignoreWater = true;
 		}

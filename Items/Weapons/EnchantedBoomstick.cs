@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
+using Terraria.GameContent.Creative;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -11,11 +12,12 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Enchanted boomstick");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()
 		{
-			Item.damage = 15;
+			Item.damage = 18;
 			Item.crit = 6;
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 40;

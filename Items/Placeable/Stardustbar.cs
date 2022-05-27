@@ -1,6 +1,7 @@
 ﻿using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
 using Feldosbetterweaponsmod.Tiles;
 
 namespace Feldosbetterweaponsmod.Items.Placeable
@@ -10,6 +11,7 @@ namespace Feldosbetterweaponsmod.Items.Placeable
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Stardust bar");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 		}
 
 		public override void SetDefaults()

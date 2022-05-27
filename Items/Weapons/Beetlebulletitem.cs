@@ -1,6 +1,7 @@
 ﻿using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -10,6 +11,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			DisplayName.SetDefault("Beetle bullet");
 			Tooltip.SetDefault("Warning: may be too accurate.");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 9999;
 		}
 
 		public override void SetDefaults()

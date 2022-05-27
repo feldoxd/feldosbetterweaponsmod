@@ -2,8 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Feldosbetterweaponsmod.Projectiles;
-using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
+using Terraria.GameContent.Creative;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -13,16 +12,17 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			DisplayName.SetDefault("Nebula staff");
 			Item.staff[Item.type] = true;
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 		public override void SetDefaults()
 		{
 			Item.damage = 170;
 			Item.DamageType = DamageClass.Magic;
-			Item.mana = 15;
+			Item.mana = 20;
 			Item.width = 40;
 			Item.height = 40;
-			Item.useTime = 12;
-			Item.useAnimation = 25;
+			Item.useTime = 16;
+			Item.useAnimation = 16;
 			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.noMelee = true;
 			Item.knockBack = 5;

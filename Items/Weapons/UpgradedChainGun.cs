@@ -1,4 +1,4 @@
-using Feldosbetterweaponsmod.Projectiles;
+using Terraria.GameContent.Creative;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -14,6 +14,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			DisplayName.SetDefault("Vortex chain gun");
 			Tooltip.SetDefault("'It costs $400 000 dollars to fire this weapon for 12 seconds.'\n58% chance to not consume ammo");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()
@@ -52,17 +53,23 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			return new Vector2(2, 0);
 		}
 
+		public override bool CanConsumeAmmo(Item ammo, Player player)
+		{
+			return Main.rand.NextFloat() >= 0.58f;
+		}
+
 		public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
 		{
+			velocity = velocity.RotatedByRandom(MathHelper.ToRadians(5));
+
 			Vector2 muzzleOffset = Vector2.Normalize(velocity) * 10f;
-			muzzleOffset.Y += 0;
 			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
 			{
 				position += muzzleOffset;
 			}
 		}
 
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
 			Projectile.NewProjectile(source, position, velocity, ProjectileID.VortexBeaterRocket, damage, knockback + 6, default, 1, 1);
 			return true;

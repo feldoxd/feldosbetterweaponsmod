@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
+using Terraria.GameContent.Creative;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -11,6 +12,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Obsidian repeater");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()
@@ -20,7 +22,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.width = 56; // hitbox width of the Item
 			Item.height = 20; // hitbox height of the Item
 			Item.useTime = 14; // The Item's use time in ticks (60 ticks == 1 second.)
-			Item.useAnimation = 10; // The length of the Item's use animation in ticks (60 ticks == 1 second.)
+			Item.useAnimation = 14; // The length of the Item's use animation in ticks (60 ticks == 1 second.)
 			Item.useStyle = ItemUseStyleID.Shoot; // how you use the Item (swinging, holding out, etc)
 			Item.noMelee = true; //so the Item's animation doesn't do damage
 			Item.knockBack = 4; // Sets the Item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.

@@ -2,23 +2,12 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.DataStructures;
 using Feldosbetterweaponsmod.Items.Placeable;
 
 namespace Feldosbetterweaponsmod
 {
 	public class Feldosbetterweaponsmod : Mod
 	{
-		public override void Load()
-        {
-
-        }
-
-		public override void Unload()
-		{
-
-		}
-
 		public override void AddRecipeGroups()
 		{
 			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil bows", new int[]
@@ -28,14 +17,10 @@ namespace Feldosbetterweaponsmod
 			});
 			RecipeGroup.RegisterGroup("Feldosbetterweaponsmod:Evilbows", group);
 		}
-		
-		
-
 	}
 
 	public class Recipes : ModSystem
     {
-
 		public override void AddRecipes()
 		{
 			//solar stuff

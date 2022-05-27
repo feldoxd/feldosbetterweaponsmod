@@ -24,7 +24,6 @@ namespace Feldosbetterweaponsmod.Projectiles
 
 		public override void SetDefaults()
 		{
-			Projectile.extraUpdates = 4;
 			Projectile.width = 14;
 			Projectile.height = 14;
 			Projectile.aiStyle = 99;

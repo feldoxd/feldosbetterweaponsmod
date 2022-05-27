@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
-using Feldosbetterweaponsmod.Projectiles;
+using Terraria.GameContent.Creative;
 using Microsoft.Xna.Framework;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
@@ -13,7 +13,8 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			DisplayName.SetDefault("Crystal staff");
 			Tooltip.SetDefault("More powerfull version of Blizzard staff combined with Crystal storm");
-			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
+			Item.staff[Item.type] = true;
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 		public override void SetDefaults()
 		{

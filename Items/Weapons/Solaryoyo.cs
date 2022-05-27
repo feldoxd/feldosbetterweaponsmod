@@ -4,9 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Feldosbetterweaponsmod.Items.Placeable;
-using Microsoft.Xna.Framework;
-using Terraria.Utilities;
-using Terraria.DataStructures;
+using Terraria.GameContent.Creative;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -15,11 +13,10 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Solar yoyo");
-
-			// These are all related to gamepad controls and don't seem to affect anything else
 			ItemID.Sets.Yoyo[Item.type] = true;
 			ItemID.Sets.GamepadExtraRange[Item.type] = 15;
 			ItemID.Sets.GamepadSmartQuickReach[Item.type] = true;
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()
