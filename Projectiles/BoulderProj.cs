@@ -17,7 +17,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 		public override void SetDefaults()
 		{
 			Projectile.CloneDefaults(ProjectileID.BoulderStaffOfEarth);
-			Projectile.DamageType = DamageClass.Magic;
+			Projectile.DamageType = DamageClass.Ranged;
 			Projectile.friendly = true;
 			Projectile.penetrate = int.MaxValue;
 			AIType = ProjectileID.BoulderStaffOfEarth;

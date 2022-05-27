@@ -1,3 +1,4 @@
+using Feldosbetterweaponsmod.Projectiles;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -22,7 +23,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.width = 52; // hitbox width of the Item
 			Item.height = 32; // hitbox height of the Item
 			Item.useTime = 4; // The Item's use time in ticks (60 ticks == 1 second.)
-			Item.useAnimation = 2; // The length of the Item's use animation in ticks (60 ticks == 1 second.)
+			Item.useAnimation = 4; // The length of the Item's use animation in ticks (60 ticks == 1 second.)
 			Item.useStyle = ItemUseStyleID.Shoot; // how you use the Item (swinging, holding out, etc)
 			Item.noMelee = true; //so the Item's animation doesn't do damage
 			Item.knockBack = 2; // Sets the Item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
@@ -30,7 +31,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.rare = ItemRarityID.Cyan; // the color that the Item's name will be in-game
 			Item.UseSound = SoundID.Item40; // The sound that this Item plays when used.
 			Item.autoReuse = true; // if you can hold click to automatically use it again
-			Item.shoot = ProjectileID.PurificationPowder; //idk why but all the guns in the vanilla source have this //ProjectileID.PurificationPowder
+			Item.shoot = ProjectileID.VortexBeaterRocket; //idk why but all the guns in the vanilla source have this //ProjectileID.PurificationPowder
 			Item.shootSpeed = 24f; // the speed of the projectile (measured in pixels per frame)
 			Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo Item that this weapon uses. Note that this is not an Item Id, but just a magic value.
 		}
@@ -48,28 +49,31 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
 		public override Vector2? HoldoutOffset()
 		{
-			return new Vector2(2, 10);
+			return new Vector2(2, 0);
 		}
 
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-        {
-			Vector2 muzzleOffset = Vector2.Normalize(position) * 25f;
+		public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+		{
+			Vector2 muzzleOffset = Vector2.Normalize(velocity) * 10f;
+			muzzleOffset.Y += 0;
 			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
 			{
 				position += muzzleOffset;
 			}
-			Vector2 perturbedSpeed = position.RotatedByRandom(MathHelper.ToRadians(25));
+		}
 
-			Projectile.NewProjectile(source, position, velocity, ProjectileID.VortexBeaterRocket, damage, knockback);
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+			Projectile.NewProjectile(source, position, velocity, ProjectileID.VortexBeaterRocket, damage, knockback + 6, default, 1, 1);
 			return true;
 		}
 
 		public override void ModifyHitNPC(Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
 		{
 			if (target.type >= NPCID.MoonLordCore || NPCID.MoonLordHand >= target.type || target.type >= NPCID.MoonLordHead)
-				{
-					damage -= 20;
-				}
+			{
+				damage -= 20;
+			}
 		}
 	}
 }

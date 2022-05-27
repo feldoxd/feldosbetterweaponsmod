@@ -43,9 +43,14 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			.AddTile(TileID.Anvils)
 			.Register();
 		}
-		
+
+		public override Vector2? HoldoutOffset()
+		{
+			return new Vector2(3f, 0f);
+		}
+
 		public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) {
-			Vector2 muzzleOffset = Vector2.Normalize(velocity) * -80;
+			Vector2 muzzleOffset = Vector2.Normalize(velocity) * -40;
 			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0)) {
 				position += muzzleOffset;
 			}
@@ -66,10 +71,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
 			return true;
 
-		}
-		public override Vector2? HoldoutOffset()
-		{
-			return new Vector2(- 5, 0);
 		}
 	}
 

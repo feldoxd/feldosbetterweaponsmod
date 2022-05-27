@@ -1,6 +1,7 @@
 ﻿using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria;
+using Terraria.Audio;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 
@@ -11,7 +12,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Vortex launcher");
-			Tooltip.SetDefault("Shoots 2 rockets for price of 1!");
+			Tooltip.SetDefault("Shoots 3 rockets for price of 1.");
 		}
 
 		public override void SetDefaults()
@@ -26,7 +27,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.knockBack = 4; // Sets the Item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.value = Item.buyPrice(gold: 5);
 			Item.rare = ItemRarityID.Cyan; // the color that the Item's name will be in-game
-			Item.UseSound = SoundID.Item31;
 			Item.autoReuse = true; // if you can hold click to automatically use it again
 			Item.shoot = ProjectileID.RocketI;
 			Item.shootSpeed = 16f; // the speed of the projectile (measured in pixels per frame)
@@ -56,11 +56,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-        Vector2 muzzleOffset = Vector2.Normalize(position) * 25f;
-			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
-			{
-				position += muzzleOffset;
-			}
+			SoundEngine.PlaySound(SoundID.Item11);
 			return true;
 		}
 	}

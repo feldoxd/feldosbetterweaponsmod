@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.GameContent;
 using System;
 
 namespace Feldosbetterweaponsmod.Projectiles
@@ -46,7 +48,7 @@ namespace Feldosbetterweaponsmod.Projectiles
                 Projectile.localAI[0] = 1f;
             }
             Vector2 move = Vector2.Zero;
-            float distance = 400f;
+            float distance = 200f;
             bool target = false;
             for (int k = 0; k < 200; k++)
             {
@@ -67,11 +69,6 @@ namespace Feldosbetterweaponsmod.Projectiles
                 AdjustMagnitude(ref move);
                 Projectile.velocity = (10 * Projectile.velocity + move) / 11f;
                 AdjustMagnitude(ref Projectile.velocity);
-            }
-            if (Projectile.alpha <= 100)
-            {
-                //int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Pixie);
-                //Main.dust[dust].velocity /= 2f;
             }
         }
 
