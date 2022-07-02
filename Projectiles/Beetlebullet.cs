@@ -24,7 +24,6 @@ namespace Feldosbetterweaponsmod.Projectiles
             Projectile.width = 2;
             Projectile.height = 20;
             Projectile.friendly = true;
-            Projectile.extraUpdates = 2;
             Projectile.DamageType = DamageClass.Ranged;
 
             AIType = ProjectileID.Bullet;
@@ -42,7 +41,8 @@ namespace Feldosbetterweaponsmod.Projectiles
             }
             if (Projectile.localAI[0] == 0f)
             {
-                AdjustMagnitude(ref Projectile.velocity);
+
+                Feldosbetterweaponsmod.AdjustMagnitude(ref Projectile.velocity);
                 Projectile.localAI[0] = 1f;
             }
             Vector2 move = Vector2.Zero;
@@ -64,18 +64,9 @@ namespace Feldosbetterweaponsmod.Projectiles
             }
             if (target)
             {
-                AdjustMagnitude(ref move);
+                Feldosbetterweaponsmod.AdjustMagnitude(ref move);
                 Projectile.velocity = (10 * Projectile.velocity + move) / 11f;
-                AdjustMagnitude(ref Projectile.velocity);
-            }
-        }
-
-        private static void AdjustMagnitude(ref Vector2 vector)
-        {
-            float magnitude = (float)Math.Sqrt(vector.X * vector.X + vector.Y * vector.Y);
-            if (magnitude > 6f)
-            {
-                vector *= 6f / magnitude;
+                Feldosbetterweaponsmod.AdjustMagnitude(ref Projectile.velocity);
             }
         }
 

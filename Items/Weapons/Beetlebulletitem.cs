@@ -26,7 +26,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.value = Item.buyPrice(copper: 75);
 			Item.rare = ItemRarityID.Yellow;
 			Item.shoot = ModContent.ProjectileType<Projectiles.Beetlebullet>();   //The projectile shoot when your weapon using this ammo
-			Item.shootSpeed = 16f;                  //The speed of the projectile
+			Item.shootSpeed = 24f;                  //The speed of the projectile
 			Item.ammo = AmmoID.Bullet;              //The ammo class this ammo belongs to.
 		}
 		public override void AddRecipes()

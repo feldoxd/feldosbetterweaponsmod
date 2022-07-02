@@ -2,6 +2,10 @@ This mod adds some upgraded variants of vanilla weapons and some new as well.
 
 Thanks for downloading.
 
+1.1.1 update:
+
+small changes.
+
 1.1.0 update:
 
 Added enchanted boomstick.
