@@ -2,6 +2,12 @@ This mod adds some upgraded variants of vanilla weapons and some new as well.
 
 Thanks for downloading.
 
+1.1.3 update:
+
+Fixed recipe for Beetle bullet.
+Fixed recipe for Unlimited Beetle bullet.
+Made Enchanted boomstick auto-shoot.
+
 1.1.1 update:
 
 small changes.

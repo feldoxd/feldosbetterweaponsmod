@@ -31,7 +31,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		}
 		public override void AddRecipes()
 		{
-			CreateRecipe()
+			CreateRecipe(60)
 			.AddIngredient(ItemID.BeetleHusk)
 			.AddIngredient(ItemID.ChlorophyteBullet, 60)
 			.AddTile(TileID.MythrilAnvil)

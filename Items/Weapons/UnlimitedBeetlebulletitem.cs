@@ -34,7 +34,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void AddRecipes()
 		{
 			CreateRecipe()
-			.AddIngredient(ItemID.BlizzardStaff)
 			.AddIngredient(ModContent.ItemType<Beetlebulletitem>(), 9999)
 			.AddTile(TileID.MythrilAnvil)
 			.Register();

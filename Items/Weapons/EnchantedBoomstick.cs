@@ -30,7 +30,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.value = Item.buyPrice(silver: 90);
 			Item.rare = ItemRarityID.Blue;
 			Item.UseSound = SoundID.Item36;
-			Item.autoReuse = false;
+			Item.autoReuse = true;
 			Item.shoot = ProjectileID.PurificationPowder;
 			Item.shootSpeed = 16f;
 			Item.useAmmo = AmmoID.Bullet;
