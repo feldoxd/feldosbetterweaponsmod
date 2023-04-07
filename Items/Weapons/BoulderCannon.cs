@@ -12,7 +12,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
     {
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Boulder cannon");
+			// DisplayName.SetDefault("Boulder cannon");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 

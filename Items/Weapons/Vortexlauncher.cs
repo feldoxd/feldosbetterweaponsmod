@@ -12,8 +12,8 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vortex launcher");
-			Tooltip.SetDefault("Shoots 3 rockets for price of 1.");
+			// DisplayName.SetDefault("Vortex launcher");
+			// Tooltip.SetDefault("Shoots 3 rockets for price of 1.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 

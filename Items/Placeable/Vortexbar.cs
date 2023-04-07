@@ -10,7 +10,7 @@ namespace Feldosbetterweaponsmod.Items.Placeable
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Vortex bar");
+			// DisplayName.SetDefault("Vortex bar");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 		}
 

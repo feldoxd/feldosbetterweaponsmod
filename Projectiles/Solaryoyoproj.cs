@@ -60,10 +60,10 @@ namespace Feldosbetterweaponsmod.Projectiles
 			{
 				float num3 = 400f;
 				Vector2 velocity = base.Projectile.velocity;
-				Vector2 vector = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
+				Vector2 vector = new(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 				vector.Normalize();
 				vector *= (float)Main.rand.Next(10, 41) * 0.1f;
-				if (Main.rand.Next(3) == 0)
+				if (Main.rand.NextBool(3))
 				{
 					vector *= 2f;
 				}
@@ -93,10 +93,9 @@ namespace Feldosbetterweaponsmod.Projectiles
 				Projectile.localAI[1] = 0f;
 			}
 		}
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(BuffID.OnFire, 900);
-			base.OnHitNPC(target, damage, knockback, crit);
 		}
 	}
 }

@@ -10,7 +10,7 @@ namespace Feldosbetterweaponsmod.Items.Placeable
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Solar bar");
+			// DisplayName.SetDefault("Solar bar");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 		}
 

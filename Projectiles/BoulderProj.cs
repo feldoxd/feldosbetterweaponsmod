@@ -11,7 +11,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("boulderproj");
+			// DisplayName.SetDefault("boulderproj");
 		}
 
 		public override void SetDefaults()

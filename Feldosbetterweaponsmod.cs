@@ -10,7 +10,8 @@ namespace Feldosbetterweaponsmod
 {
 	public class Feldosbetterweaponsmod : Mod
 	{
-		public override void AddRecipeGroups()
+        [Obsolete]
+        public override void AddRecipeGroups()/* tModPorter Note: Removed. Use ModSystem.AddRecipeGroups */
 		{
 			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil bows", new int[]
 			{

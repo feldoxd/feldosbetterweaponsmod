@@ -9,8 +9,8 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Beetle bullet");
-			Tooltip.SetDefault("Warning: may be too accurate.");
+			// DisplayName.SetDefault("Beetle bullet");
+			// Tooltip.SetDefault("Warning: may be too accurate.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 9999;
 		}
 

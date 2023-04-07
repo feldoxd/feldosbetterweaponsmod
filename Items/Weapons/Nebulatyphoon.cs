@@ -12,8 +12,8 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nebula typhoon");
-			Tooltip.SetDefault("More aggressive, better version of razorblade typhoon");
+			// DisplayName.SetDefault("Nebula typhoon");
+			// Tooltip.SetDefault("More aggressive, better version of razorblade typhoon");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 		public override void SetDefaults()

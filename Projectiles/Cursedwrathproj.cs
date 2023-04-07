@@ -11,7 +11,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 	{
         public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cursed wrath Projectile");
+			// DisplayName.SetDefault("Cursed wrath Projectile");
 		}
 		public override void SetDefaults()
 		{
@@ -60,7 +60,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 				gore.velocity += base.Projectile.velocity * 0.3f;
 			}
 		}
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
 			target.AddBuff(BuffID.CursedInferno, 900);
 		}

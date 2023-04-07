@@ -10,7 +10,7 @@ namespace Feldosbetterweaponsmod.Items.Placeable
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Nebula bar");
+			// DisplayName.SetDefault("Nebula bar");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 		}
 

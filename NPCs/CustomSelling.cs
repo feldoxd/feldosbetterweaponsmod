@@ -7,14 +7,14 @@ namespace Feldosbetterweaponsmod.NPCs
 {
     public class CustomSelling : GlobalNPC
     {
-        public override void SetupShop(int type, Chest shop, ref int nextSlot)
+        public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
         {
-            switch (type)
+            switch (npc.type)
             {
                 case NPCID.Merchant:
                     {
-                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Milk>());
-                        nextSlot++;
+                        items[npc.lastInteraction].SetDefaults(ModContent.ItemType<Milk>());
+                        npc.lastInteraction++;
                     }
                     break;
             }

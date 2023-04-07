@@ -10,7 +10,7 @@ namespace Feldosbetterweaponsmod.Items.Placeable
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Stardust bar");
+			// DisplayName.SetDefault("Stardust bar");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 		}
 

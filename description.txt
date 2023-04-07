@@ -2,6 +2,12 @@ This mod adds some upgraded variants of vanilla weapons and some new as well.
 
 Thanks for downloading.
 
+1.1.4 update:
+
+Ported to 1.4.4.9.
+Added Hellstone whip.
+Added Stardust whip.
+
 1.1.3 update:
 
 Fixed recipe for Beetle bullet.

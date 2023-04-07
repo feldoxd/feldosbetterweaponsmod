@@ -24,15 +24,15 @@ namespace Feldosbetterweaponsmod.Tiles
 			AddMapEntry(new Color(200, 200, 200), Language.GetText("MapObject.MetalBar"));
 		}
 
-		public override bool Drop(int i, int j)
-		{
-			Tile t = Main.tile[i, j];
-			int style = t.TileFrameX / 18;
-			if (style == 0)
-			{
-				Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, ModContent.ItemType<Items.Placeable.Vortexbar>());
-			}
-			return base.Drop(i, j);
-		}
-	}
+        public override bool CanDrop(int i, int j)
+        {
+            Tile t = Main.tile[i, j];
+            int style = t.TileFrameX / 18;
+            if (style == 0)
+            {
+                Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 16, ModContent.ItemType<Items.Placeable.Vortexbar>());
+            }
+            return base.CanDrop(i, j);
+        }
+    }
 }

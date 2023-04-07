@@ -1,0 +1,143 @@
+
+Mods: {
+	Feldosbetterweaponsmod: {
+		Items: {
+			AntiLevitation: {
+				DisplayName: Anti Levitation
+				Tooltip: Imunity to levitation.
+			}
+
+			Milk: {
+				DisplayName: Milk
+				Tooltip: ""
+			}
+
+			Nebulabar: {
+				DisplayName: Nebula bar
+				Tooltip: ""
+			}
+
+			Solarbar: {
+				DisplayName: Solar bar
+				Tooltip: ""
+			}
+
+			Stardustbar: {
+				DisplayName: Stardust bar
+				Tooltip: ""
+			}
+
+			Vortexbar: {
+				DisplayName: Vortex bar
+				Tooltip: ""
+			}
+
+			Beetlebulletitem: {
+				DisplayName: Beetle bullet
+				Tooltip: Warning: may be too accurate.
+			}
+
+			BoulderCannon: {
+				DisplayName: Boulder cannon
+				Tooltip: ""
+			}
+
+			CopperRepeater: {
+				DisplayName: Copper repeater
+				Tooltip: ""
+			}
+
+			CrystalStaff: {
+				DisplayName: Crystal staff
+				Tooltip: More powerfull version of Blizzard staff combined with Crystal storm
+			}
+
+			Cursedwrath: {
+				DisplayName: Cursed wrath
+				Tooltip: ""
+			}
+
+			EnchantedBoomstick: {
+				DisplayName: Enchanted boomstick
+				Tooltip: ""
+			}
+
+			NebulaStaff: {
+				DisplayName: Nebula staff
+				Tooltip: ""
+			}
+
+			Nebulatyphoon: {
+				DisplayName: Nebula typhoon
+				Tooltip: More aggressive, better version of razorblade typhoon
+			}
+
+			ObsidianRepeater: {
+				DisplayName: Obsidian repeater
+				Tooltip: ""
+			}
+
+			Solaryoyo: {
+				DisplayName: Solar yoyo
+				Tooltip: ""
+			}
+
+			StarcannonMK2: {
+				DisplayName: Star cannon MK2
+				Tooltip: ""
+			}
+
+			UnlimitedBeetlebulletitem: {
+				DisplayName: Unlimited Beetle bullet
+				Tooltip:
+					'''
+					Warning: may be too accurate.
+					Unlimited.
+					'''
+			}
+
+			UpgradedAmberstaff: {
+				DisplayName: Hellstone staff
+				Tooltip: ""
+			}
+
+			UpgradedChainGun: {
+				DisplayName: Vortex chain gun
+				Tooltip:
+					'''
+					'It costs $400 000 dollars to fire this weapon for 12 seconds.'
+					58% chance to not consume ammo
+					'''
+			}
+
+			VortexLauncher: {
+				DisplayName: Vortex launcher
+				Tooltip: Shoots 3 rockets for price of 1.
+			}
+
+			HellstoneWhip: {
+				DisplayName: Hellstone Whip
+				Tooltip: ""
+			}
+
+			StardustWhip: {
+				DisplayName: Stardust Whip
+				Tooltip: ""
+			}
+		}
+
+		Projectiles: {
+			Beetlebullet.DisplayName: Beetle Bullet
+			BoulderProj.DisplayName: boulderproj
+			CrystalBulletReplacement.DisplayName: CrystalBulletReplacement
+			Cursedwrathproj.DisplayName: Cursed wrath Projectile
+			NebulaStaffproj.DisplayName: Nebula Staffproj
+			NebulatyphoonProj.DisplayName: Nebulatyphoon Proj
+			Solaryoyofireproj.DisplayName: Solaryoyofireproj
+			Solaryoyoproj.DisplayName: Solaryoyoproj
+			StarcannonMK2proj.DisplayName: Starcannon M K2proj
+			HellstoneWhipProjectile.DisplayName: Hellstone Whip Projectile
+			StardustWhipProjectile.DisplayName: Stardust Whip Projectile
+		}
+	}
+}

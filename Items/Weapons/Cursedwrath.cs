@@ -13,7 +13,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cursed wrath");
+			// DisplayName.SetDefault("Cursed wrath");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
@@ -63,7 +63,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			}
 		}
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(BuffID.CursedInferno, 900);
 			target.AddBuff(BuffID.ShadowFlame, 900, true);

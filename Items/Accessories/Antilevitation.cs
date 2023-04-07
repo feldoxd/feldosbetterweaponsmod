@@ -10,8 +10,8 @@ namespace Feldosbetterweaponsmod.Items.Accessories
 	public class AntiLevitation : ModItem
 	{
 		public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Anti-gravity device");
-            Tooltip.SetDefault("Imunity to levitation.");
+            // DisplayName.SetDefault("Anti-gravity device");
+            // Tooltip.SetDefault("Imunity to levitation.");
 			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(32, 3));
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}

@@ -10,7 +10,7 @@ namespace Feldosbetterweaponsmod.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Beetle Bullet");
+            // DisplayName.SetDefault("Beetle Bullet");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 5;    //The length of old position to be recorded
             ProjectileID.Sets.TrailingMode[Projectile.type] = 5;        //The recording mode
 
@@ -41,7 +41,6 @@ namespace Feldosbetterweaponsmod.Projectiles
             }
             if (Projectile.localAI[0] == 0f)
             {
-
                 Feldosbetterweaponsmod.AdjustMagnitude(ref Projectile.velocity);
                 Projectile.localAI[0] = 1f;
             }

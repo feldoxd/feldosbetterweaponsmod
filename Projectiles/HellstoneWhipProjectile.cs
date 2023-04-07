@@ -38,7 +38,7 @@ namespace Feldosbetterweaponsmod.Projectiles
             set => Projectile.ai[1] = value;
         }
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             target.AddBuff(BuffID.OnFire3, 240);
             Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
