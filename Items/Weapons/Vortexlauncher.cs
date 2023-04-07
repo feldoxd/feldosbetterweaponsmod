@@ -35,8 +35,8 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.useAmmo = AmmoID.Rocket; // The "ammo Id" of the ammo Item that this weapon uses. Note that this is not an Item Id, but just a magic value.
 
 
-			Item.useAnimation = 36;
-			Item.useTime = 12; // one third of useAnimation
+			Item.useAnimation = 15;
+			Item.useTime = 5; // one third of useAnimation
 			Item.reuseDelay = 14;
 			Item.consumeAmmoOnLastShotOnly = true;
 		}
@@ -61,5 +61,14 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			SoundEngine.PlaySound(SoundID.Item11);
 			return true;
 		}
-	}
+
+		public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+		{
+			Vector2 muzzleOffset = Vector2.Normalize(velocity) * 45f;
+			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
+			{
+				position += muzzleOffset;
+			}
+		}
+        }
 }

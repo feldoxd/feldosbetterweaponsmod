@@ -22,8 +22,8 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 40;
 			Item.height = 16;
-			Item.useTime = 35;
-			Item.useAnimation = 35;
+			Item.useTime = 42;
+			Item.useAnimation = 42;
 			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.noMelee = true;
 			Item.knockBack = 6;
