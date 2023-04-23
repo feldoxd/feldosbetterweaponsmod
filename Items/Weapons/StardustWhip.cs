@@ -19,19 +19,23 @@ namespace Feldosbetterweaponsmod.Items.Weapons
             // Mouse over to see its parameters.
             Item.DefaultToWhip(ModContent.ProjectileType<StardustWhipProjectile>(), 200, 1, 15);
 
+            Item.height = 34;
+            Item.width = 38;
             Item.autoReuse = true;
             Item.shootSpeed = 5;
-            Item.rare = ItemRarityID.Green;
+            Item.rare = ItemRarityID.Cyan;
 
             Item.channel = true;
         }
 
         // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-      /*  public override void AddRecipes()
+        public override void AddRecipes()
         {
             CreateRecipe()
-                .Register();
-        }*/
+              .AddIngredient(ItemID.FragmentStardust, 18)
+              .AddTile(TileID.LunarCraftingStation)
+              .Register();
+        }
 
         // Makes the whip receive melee prefixes
         public override bool MeleePrefix()

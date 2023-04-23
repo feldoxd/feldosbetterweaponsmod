@@ -3,7 +3,6 @@ using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Feldosbetterweaponsmod.Items.Placeable;
 using Terraria.GameContent.Creative;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
@@ -61,7 +60,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void AddRecipes()
 		{
 			CreateRecipe()
-			.AddIngredient(ModContent.ItemType<Solarbar>(), 10)
+			.AddIngredient(ItemID.FragmentSolar, 20)
 			.AddIngredient(ItemID.Terrarian)
 			.AddTile(TileID.LunarCraftingStation)
 			.Register();

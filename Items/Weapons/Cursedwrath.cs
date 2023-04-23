@@ -3,7 +3,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Feldosbetterweaponsmod.Projectiles;
-using Feldosbetterweaponsmod.Items.Placeable;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 
@@ -46,13 +45,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			.AddIngredient(ItemID.TerraBlade)
 			.AddTile(TileID.LunarCraftingStation)
 			.Register();
-			CreateRecipe()
-			.AddIngredient(ModContent.ItemType<Solarbar>(), 10)
-			.AddIngredient(ItemID.CursedFlame, 30)
-			.AddIngredient(ItemID.TerraBlade)
-			.AddIngredient(ItemID.StarWrath)
-			.AddTile(TileID.LunarCraftingStation)
-			.Register();
+			CreateRecipe();
 		}
 
 		public override void MeleeEffects(Player player, Rectangle hitbox)

@@ -2,9 +2,10 @@ This mod adds some upgraded variants of vanilla weapons and some new as well.
 
 Thanks for downloading.
 
-1.1.4 update:
+1.2.0 update:
 
 Ported to 1.4.4.9.
+Deleted all bars.
 Added Hellstone whip.
 Added Stardust whip.
 
