@@ -116,12 +116,12 @@ Mods: {
 
 			HellstoneWhip: {
 				DisplayName: Hellstone Whip
-				Tooltip: ""
+				Tooltip: Your summons will focus struck enemies
 			}
 
 			StardustWhip: {
 				DisplayName: Stardust Whip
-				Tooltip: ""
+				Tooltip: Your summons will focus struck enemies
 			}
 		}
 

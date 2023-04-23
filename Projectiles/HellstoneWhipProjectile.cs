@@ -23,6 +23,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 
             // use these to change from the vanilla defaults
             // Projectile.WhipSettings.Segments = 20;
+             Projectile.light = 1f;
              Projectile.WhipSettings.RangeMultiplier = 1.5f;
         }
 
@@ -85,6 +86,10 @@ namespace Feldosbetterweaponsmod.Projectiles
             Texture2D texture = TextureAssets.Projectile[Type].Value;
 
             Vector2 pos = list[0];
+
+            int num1 = Dust.NewDust(base.Projectile.position, base.Projectile.width, base.Projectile.height, DustID.Flare, base.Projectile.velocity.X * 1.5f, base.Projectile.velocity.Y * 1.5f, 150, default(Color), 1.2f);
+            Main.dust[num1].noGravity = false;
+            Main.dust[num1].velocity *= 3f;
 
             for (int i = 0; i < list.Count - 1; i++)
             {

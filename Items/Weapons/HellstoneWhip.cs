@@ -17,7 +17,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
         {
             // This method quickly sets the whip's properties.
             // Mouse over to see its parameters.
-            Item.DefaultToWhip(ModContent.ProjectileType<HellstoneWhipProjectile>(), 28, 3, 4);
+            Item.DefaultToWhip(ModContent.ProjectileType<HellstoneWhipProjectile>(), 28, 2, 4);
 
             Item.height = 34;
             Item.width = 38;

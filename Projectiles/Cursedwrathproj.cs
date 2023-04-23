@@ -13,6 +13,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 		{
 			// DisplayName.SetDefault("Cursed wrath Projectile");
 		}
+
 		public override void SetDefaults()
 		{
 			Projectile.width = 34;
@@ -24,6 +25,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 			Projectile.DamageType = DamageClass.Melee;
 			Projectile.extraUpdates = 1;
 		}
+
         public override void AI()
         {
 			if (Projectile.Center.Y >= Projectile.ai[1])
@@ -43,14 +45,14 @@ namespace Feldosbetterweaponsmod.Projectiles
 			Projectile.localAI[0] += (Math.Abs(base.Projectile.velocity.X) + Math.Abs(base.Projectile.velocity.Y)) * 0.01f * (float)Projectile.direction;
 			Projectile.rotation = base.Projectile.velocity.ToRotation() - (float)Math.PI / 2f;
 
-			if (Main.rand.Next(16) == 0)
+			if (Main.rand.NextBool(16))
 			{
 				Vector2 value3 = Vector2.UnitX.RotatedByRandom(1.5707963705062866).RotatedBy(base.Projectile.velocity.ToRotation());
-				int num76 = Dust.NewDust(base.Projectile.position, base.Projectile.width, base.Projectile.height, 58, base.Projectile.velocity.X * 0.5f, base.Projectile.velocity.Y * 0.5f, 150, default(Color), 1.2f);
+				int num76 = Dust.NewDust(base.Projectile.position, base.Projectile.width, base.Projectile.height, DustID.Enchanted_Pink, base.Projectile.velocity.X * 0.5f, base.Projectile.velocity.Y * 0.5f, 150, default(Color), 1.2f);
 				Main.dust[num76].velocity = value3 * 0.66f;
 				Main.dust[num76].position = base.Projectile.Center + value3 * 12f;
 			}
-			if (Main.rand.Next(48) == 0)
+			if (Main.rand.NextBool(48))
 			{
 				EntitySource_TileBreak source = new ((int)Projectile.position.X, (int)Projectile.position.Y);
 				int num77 = Gore.NewGore(source, new Vector2(base.Projectile.velocity.X * 0.2f), new Vector2(base.Projectile.velocity.Y * 0.2f), 16);
@@ -60,10 +62,12 @@ namespace Feldosbetterweaponsmod.Projectiles
 				gore.velocity += base.Projectile.velocity * 0.3f;
 			}
 		}
+
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
 			target.AddBuff(BuffID.CursedInferno, 900);
 		}
+
         public override void Kill(int timeLeft)
         {
 			Terraria.Audio.SoundEngine.PlaySound(SoundID.Item10, base.Projectile.position);
