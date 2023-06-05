@@ -19,13 +19,11 @@ namespace Feldosbetterweaponsmod.Items.Weapons
             // Mouse over to see its parameters.
             Item.DefaultToWhip(ModContent.ProjectileType<StardustWhipProjectile>(), 200, 1, 15);
 
+            Item.crit = 6;
             Item.height = 34;
             Item.width = 38;
-            Item.autoReuse = true;
             Item.shootSpeed = 5;
             Item.rare = ItemRarityID.Cyan;
-
-            Item.channel = true;
         }
 
         // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

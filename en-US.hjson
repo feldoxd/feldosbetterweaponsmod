@@ -127,14 +127,13 @@ Mods: {
 
 		Projectiles: {
 			Beetlebullet.DisplayName: Beetle Bullet
-			BoulderProj.DisplayName: boulderproj
 			CrystalBulletReplacement.DisplayName: CrystalBulletReplacement
-			Cursedwrathproj.DisplayName: Cursed wrath Projectile
-			NebulaStaffproj.DisplayName: Nebula Staffproj
+			Cursedwrathproj.DisplayName: Cursed wrath projectile
+			NebulaStaffproj.DisplayName: Nebula Staff projectile
 			NebulatyphoonProj.DisplayName: Nebulatyphoon Proj
-			Solaryoyofireproj.DisplayName: Solaryoyofireproj
-			Solaryoyoproj.DisplayName: Solaryoyoproj
-			StarcannonMK2proj.DisplayName: Starcannon M K2proj
+			Solaryoyofireproj.DisplayName: Solar yoyo fire projectile
+			Solaryoyoproj.DisplayName: Solar yoyo projectile
+			StarcannonMK2proj.DisplayName: Starcannon MK2 projectile
 			HellstoneWhipProjectile.DisplayName: Hellstone Whip Projectile
 			StardustWhipProjectile.DisplayName: Stardust Whip Projectile
 		}
