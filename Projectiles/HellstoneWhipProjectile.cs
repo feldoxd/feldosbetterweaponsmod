@@ -12,19 +12,15 @@ namespace Feldosbetterweaponsmod.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            // This makes the projectile use whip collision detection and allows flasks to be applied to it.
             ProjectileID.Sets.IsAWhip[Type] = true;
         }
 
         public override void SetDefaults()
         {
-            // This method quickly sets the whip's properties.
             Projectile.DefaultToWhip();
 
-            // use these to change from the vanilla defaults
-            // Projectile.WhipSettings.Segments = 20;
-             Projectile.light = 1f;
-             Projectile.WhipSettings.RangeMultiplier = 1.5f;
+            Projectile.light = 1f;
+            Projectile.WhipSettings.RangeMultiplier = 1.5f;
         }
 
         private float Timer
@@ -45,7 +41,6 @@ namespace Feldosbetterweaponsmod.Projectiles
             Main.player[Projectile.owner].MinionAttackTargetNPC = target.whoAmI;
         }
 
-        // This method draws a line between all points of the whip, in case there's empty space between the sprites.
         private void DrawLine(List<Vector2> list)
         {
             Texture2D texture = TextureAssets.FishingLine.Value;

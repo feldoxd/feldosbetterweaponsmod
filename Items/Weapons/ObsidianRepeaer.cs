@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
+using Feldosbetterweaponsmod;
 
 namespace Feldosbetterweaponsmod.Items.Weapons
 {
@@ -11,37 +12,34 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Obsidian repeater");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()
 		{
-			Item.damage = 16; // Sets the Item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.damage = 16;
 			Item.DamageType = DamageClass.Ranged;
-			Item.width = 56; // hitbox width of the Item
-			Item.height = 20; // hitbox height of the Item
-			Item.useTime = 14; // The Item's use time in ticks (60 ticks == 1 second.)
-			Item.useAnimation = 14; // The length of the Item's use animation in ticks (60 ticks == 1 second.)
-			Item.useStyle = ItemUseStyleID.Shoot; // how you use the Item (swinging, holding out, etc)
-			Item.noMelee = true; //so the Item's animation doesn't do damage
-			Item.knockBack = 4; // Sets the Item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+			Item.width = 56;
+			Item.height = 20;
+			Item.useTime = 14;
+			Item.useAnimation = 14;
+			Item.useStyle = ItemUseStyleID.Shoot;
+			Item.noMelee = true;
+			Item.knockBack = 4;
 			Item.value = Item.buyPrice(silver: 150);
-			Item.rare = ItemRarityID.Orange; // the color that the Item's name will be in-game
-			Item.UseSound = SoundID.Item5; // The sound that this Item plays when used.
-			Item.autoReuse = true; // if you can hold click to automatically use it again
-			Item.shoot = ProjectileID.PurificationPowder; //idk why but all the guns in the vanilla source have this
-			Item.shootSpeed = 20f; // the speed of the projectile (measured in pixels per frame)
-			Item.useAmmo = AmmoID.Arrow; // The "ammo Id" of the ammo Item that this weapon uses. Note that this is not an Item Id, but just a magic value.
+			Item.rare = ItemRarityID.Orange;
+			Item.UseSound = SoundID.Item5;
+			Item.autoReuse = true;
+			Item.shoot = ProjectileID.PurificationPowder;
+			Item.shootSpeed = 20f;
+			Item.useAmmo = AmmoID.Arrow;
 		}
 
 		public override void AddRecipes()
 		{
 			CreateRecipe()
 			.AddIngredient(ItemID.Obsidian, 15)
-			.AddIngredient(ItemID.IronBar, 5)
-			.AddIngredient(ItemID.Cobweb, 5)
-			.AddRecipeGroup("Feldosbetterweaponsmod:Evilbows")
+			.AddRecipeGroup(Feldosbetterweaponsmod.Evilbows)
 			.AddTile(TileID.Anvils)
 			.Register();
 		}

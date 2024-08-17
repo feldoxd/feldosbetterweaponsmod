@@ -15,8 +15,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
         public override void SetDefaults()
         {
-            // This method quickly sets the whip's properties.
-            // Mouse over to see its parameters.
             Item.DefaultToWhip(ModContent.ProjectileType<StardustWhipProjectile>(), 200, 1, 15);
 
             Item.crit = 6;
@@ -26,7 +24,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
             Item.rare = ItemRarityID.Cyan;
         }
 
-        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
         public override void AddRecipes()
         {
             CreateRecipe()
@@ -35,7 +32,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
               .Register();
         }
 
-        // Makes the whip receive melee prefixes
         public override bool MeleePrefix()
         {
             return true;

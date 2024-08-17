@@ -9,15 +9,17 @@ namespace Feldosbetterweaponsmod
 {
 	public class Feldosbetterweaponsmod : Mod
 	{
+		public static RecipeGroup Evilbows;
+
         [Obsolete]
-        public override void AddRecipeGroups()/* tModPorter Note: Removed. Use ModSystem.AddRecipeGroups */
+        public override void AddRecipeGroups()
 		{
-			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil bows", new int[]
-			{
-				ItemID.DemonBow,
+			Evilbows = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil bows",
+            [
+                ItemID.DemonBow,
 				ItemID.TendonBow
-			});
-			RecipeGroup.RegisterGroup("Feldosbetterweaponsmod:Evilbows", group);
+			]);
+			RecipeGroup.RegisterGroup("Feldosbetterweaponsmod:Evilbows", Evilbows);
 		}
 
 		public static void AdjustMagnitude(ref Vector2 vector)

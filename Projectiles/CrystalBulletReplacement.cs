@@ -10,11 +10,6 @@ namespace Feldosbetterweaponsmod.Projectiles
 	{
 		public override string Texture => "Terraria/Images/Projectile_" + ProjectileID.CrystalBullet;
 
-		public override void SetStaticDefaults()
-		{
-			// DisplayName.SetDefault("CrystalBulletReplacement");
-		}
-
 		public override void SetDefaults()
 		{
 			Projectile.CloneDefaults(ProjectileID.Bullet);

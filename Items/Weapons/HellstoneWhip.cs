@@ -15,8 +15,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 
         public override void SetDefaults()
         {
-            // This method quickly sets the whip's properties.
-            // Mouse over to see its parameters.
             Item.DefaultToWhip(ModContent.ProjectileType<HellstoneWhipProjectile>(), 30, 2, 4);
 
             Item.crit = 4;
@@ -26,13 +24,12 @@ namespace Feldosbetterweaponsmod.Items.Weapons
             Item.rare = ItemRarityID.Orange;
         }
 
-        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.HellstoneBar, 14)
-                .AddTile(TileID.Anvils)
-                .Register();
+            .AddIngredient(ItemID.HellstoneBar, 14)
+            .AddTile(TileID.Anvils)
+            .Register();
         }
 
         // Makes the whip receive melee prefixes

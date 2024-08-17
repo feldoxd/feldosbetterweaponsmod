@@ -11,7 +11,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Solar yoyo");
 			ItemID.Sets.Yoyo[Item.type] = true;
 			ItemID.Sets.GamepadExtraRange[Item.type] = 15;
 			ItemID.Sets.GamepadSmartQuickReach[Item.type] = true;
@@ -42,9 +41,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.shoot = ModContent.ProjectileType<Solaryoyoproj>();
 		}
 
-		// Make sure that your Item can even receive these prefixes (check the vanilla wiki on prefixes)
-		// These are the ones that reduce damage of a melee weapon
-		private static readonly int[] unwantedPrefixes = new int[] { PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy };
+		private static readonly int[] unwantedPrefixes = [PrefixID.Terrible, PrefixID.Dull, PrefixID.Shameful, PrefixID.Annoying, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy];
 
 		public override bool AllowPrefix(int pre)
 		{
@@ -60,8 +57,8 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void AddRecipes()
 		{
 			CreateRecipe()
-			.AddIngredient(ItemID.FragmentSolar, 20)
 			.AddIngredient(ItemID.Terrarian)
+			.AddIngredient(ItemID.FragmentSolar, 20)
 			.AddTile(TileID.LunarCraftingStation)
 			.Register();
 		}

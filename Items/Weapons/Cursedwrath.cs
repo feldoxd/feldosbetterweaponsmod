@@ -12,17 +12,16 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Cursed wrath");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()
 		{
-			Item.damage = 125; // The damage your Item deals
+			Item.damage = 125;
 			Item.DamageType = DamageClass.Melee;
-			Item.width = 40; // The Item texture's width
-			Item.height = 40; // The Item texture's height
-			Item.useTime = 10; // The time span of using the weapon. Remember in terraria, 60 frames is a second.
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = 10;
 			Item.useAnimation = 20;
 			Item.knockBack = 6f;
 			Item.value = Item.buyPrice(gold: 290);
@@ -38,22 +37,14 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		public override void AddRecipes()
 		{
 			CreateRecipe()
+			.AddIngredient(ItemID.StarWrath)
+			.AddIngredient(ItemID.TerraBlade)
 			.AddIngredient(ItemID.FragmentSolar, 20)
 			.AddIngredient(ItemID.LunarBar, 10)
 			.AddIngredient(ItemID.CursedFlame, 30)
-			.AddIngredient(ItemID.StarWrath)
-			.AddIngredient(ItemID.TerraBlade)
 			.AddTile(TileID.LunarCraftingStation)
 			.Register();
 			CreateRecipe();
-		}
-
-		public override void MeleeEffects(Player player, Rectangle hitbox)
-		{
-			if (Main.rand.NextBool(3))
-			{
-				Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), hitbox.Width, hitbox.Height, DustID.SolarFlare);
-			}
 		}
 
 		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)

@@ -12,38 +12,36 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Vortex chain gun");
-			// Tooltip.SetDefault("'It costs $400 000 dollars to fire this weapon for 12 seconds.'\n58% chance to not consume ammo");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()
 		{
-			Item.damage = 30; // Sets the Item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.damage = 30;
 			Item.DamageType = DamageClass.Ranged;
-			Item.width = 52; // hitbox width of the Item
-			Item.height = 32; // hitbox height of the Item
-			Item.useTime = 4; // The Item's use time in ticks (60 ticks == 1 second.)
-			Item.useAnimation = 4; // The length of the Item's use animation in ticks (60 ticks == 1 second.)
-			Item.useStyle = ItemUseStyleID.Shoot; // how you use the Item (swinging, holding out, etc)
-			Item.noMelee = true; //so the Item's animation doesn't do damage
-			Item.knockBack = 2; // Sets the Item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+			Item.width = 52;
+			Item.height = 32;
+			Item.useTime = 4;
+			Item.useAnimation = 4;
+			Item.useStyle = ItemUseStyleID.Shoot;
+			Item.noMelee = true;
+			Item.knockBack = 2;
 			Item.value = Item.sellPrice(gold: 23);
-			Item.rare = ItemRarityID.Cyan; // the color that the Item's name will be in-game
-			Item.UseSound = SoundID.Item40; // The sound that this Item plays when used.
-			Item.autoReuse = true; // if you can hold click to automatically use it again
-			Item.shoot = ProjectileID.PurificationPowder; //idk why but all the guns in the vanilla source have this //ProjectileID.PurificationPowder
-			Item.shootSpeed = 24f; // the speed of the projectile (measured in pixels per frame)
-			Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo Item that this weapon uses. Note that this is not an Item Id, but just a magic value.
+			Item.rare = ItemRarityID.Cyan;
+			Item.UseSound = SoundID.Item40;
+			Item.autoReuse = true;
+			Item.shoot = ProjectileID.PurificationPowder;
+			Item.shootSpeed = 24f;
+			Item.useAmmo = AmmoID.Bullet;
 		}
 
 		public override void AddRecipes()
 		{
 			CreateRecipe()
-			.AddIngredient(ItemID.IllegalGunParts)
-			.AddIngredient(ItemID.FragmentVortex, 20)
 			.AddIngredient(ItemID.ChainGun)
 			.AddIngredient(ItemID.VortexBeater)
+			.AddIngredient(ItemID.IllegalGunParts)
+			.AddIngredient(ItemID.FragmentVortex, 20)
 			.AddTile(TileID.LunarCraftingStation)
 			.Register();
 		}

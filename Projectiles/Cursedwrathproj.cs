@@ -9,11 +9,6 @@ namespace Feldosbetterweaponsmod.Projectiles
 {
 	public class Cursedwrathproj : ModProjectile
 	{
-        public override void SetStaticDefaults()
-		{
-			// DisplayName.SetDefault("Cursed wrath Projectile");
-		}
-
 		public override void SetDefaults()
 		{
 			Projectile.width = 34;
@@ -68,7 +63,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 			target.AddBuff(BuffID.CursedInferno, 900);
 		}
 
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
         {
 			Terraria.Audio.SoundEngine.PlaySound(SoundID.Item10, base.Projectile.position);
 		}

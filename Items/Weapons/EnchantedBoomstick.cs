@@ -11,7 +11,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Enchanted boomstick");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
@@ -60,7 +59,7 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		
 		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-			float numberProjectiles = 2 + Main.rand.Next(2); // 3, 4, or 5 shots
+			float numberProjectiles = 2 + Main.rand.Next(2);
 			float rotation = MathHelper.ToRadians(5);
 			position += Vector2.Normalize(velocity) * 45f;
 			for (int i = 0; i < numberProjectiles; i++)

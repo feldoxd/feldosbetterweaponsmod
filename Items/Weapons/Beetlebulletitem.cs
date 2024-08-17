@@ -9,8 +9,6 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Beetle bullet");
-			// Tooltip.SetDefault("Warning: may be too accurate.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 9999;
 		}
 
@@ -21,19 +19,19 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 			Item.width = 8;
 			Item.height = 8;
 			Item.maxStack = 9999;
-			Item.consumable = true;             //You need to set the Item consumable so that the ammo would automatically consumed
+			Item.consumable = true;
 			Item.knockBack = 4.5f;
 			Item.value = Item.buyPrice(copper: 75);
 			Item.rare = ItemRarityID.Yellow;
-			Item.shoot = ModContent.ProjectileType<Projectiles.Beetlebullet>();   //The projectile shoot when your weapon using this ammo
-			Item.shootSpeed = 24f;                  //The speed of the projectile
-			Item.ammo = AmmoID.Bullet;              //The ammo class this ammo belongs to.
+			Item.shoot = ModContent.ProjectileType<Projectiles.Beetlebullet>();
+			Item.shootSpeed = 24f;
+			Item.ammo = AmmoID.Bullet;
 		}
 		public override void AddRecipes()
 		{
-			CreateRecipe(60)
+			CreateRecipe(150)
+			.AddIngredient(ItemID.ChlorophyteBullet, 150)
 			.AddIngredient(ItemID.BeetleHusk)
-			.AddIngredient(ItemID.ChlorophyteBullet, 60)
 			.AddTile(TileID.MythrilAnvil)
 			.Register();
 		}

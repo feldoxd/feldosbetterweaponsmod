@@ -12,31 +12,29 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Vortex launcher");
-			// Tooltip.SetDefault("Shoots 3 rockets for price of 1.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()
 		{
-			Item.damage = 100; // Sets the Item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.damage = 100;
 			Item.DamageType = DamageClass.Ranged;
-			Item.width = 47; // hitbox width of the Item
-			Item.height = 20; // hitbox height of the Item
-			Item.useTime = 7; // The Item's use time in ticks (60 ticks == 1 second.)
-			Item.useStyle = ItemUseStyleID.Shoot; // how you use the Item (swinging, holding out, etc)
-			Item.noMelee = true; //so the Item's animation doesn't do damage
-			Item.knockBack = 4; // Sets the Item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+			Item.width = 47;
+			Item.height = 20;
+			Item.useTime = 7;
+			Item.useStyle = ItemUseStyleID.Shoot;
+			Item.noMelee = true;
+			Item.knockBack = 4;
 			Item.value = Item.buyPrice(gold: 5);
-			Item.rare = ItemRarityID.Cyan; // the color that the Item's name will be in-game
-			Item.autoReuse = true; // if you can hold click to automatically use it again
+			Item.rare = ItemRarityID.Cyan; 
+			Item.autoReuse = true;
 			Item.shoot = ProjectileID.RocketI;
-			Item.shootSpeed = 16f; // the speed of the projectile (measured in pixels per frame)
-			Item.useAmmo = AmmoID.Rocket; // The "ammo Id" of the ammo Item that this weapon uses. Note that this is not an Item Id, but just a magic value.
+			Item.shootSpeed = 16f;
+			Item.useAmmo = AmmoID.Rocket;
 
 
 			Item.useAnimation = 15;
-			Item.useTime = 5; // one third of useAnimation
+			Item.useTime = 5;
 			Item.reuseDelay = 14;
 			Item.consumeAmmoOnLastShotOnly = true;
 		}
@@ -45,8 +43,8 @@ namespace Feldosbetterweaponsmod.Items.Weapons
 		{
 			CreateRecipe()
 			.AddIngredient(ItemID.RocketLauncher)
-			.AddIngredient(ItemID.FragmentVortex, 5)
 			.AddIngredient(ItemID.ClockworkAssaultRifle)
+			.AddIngredient(ItemID.FragmentVortex, 5)
 			.AddTile(TileID.LunarCraftingStation)
 			.Register();
 		}

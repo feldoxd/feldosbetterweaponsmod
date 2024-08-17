@@ -11,13 +11,11 @@ namespace Feldosbetterweaponsmod.Items
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Milk");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 255;
-            //ItemID.Sets.IsFood[Type] = true;
 
-            ItemID.Sets.FoodParticleColors[Item.type] = new Color[1] {
+            ItemID.Sets.FoodParticleColors[Item.type] = [
                 new Color(255, 255, 255)
-            };
+            ];
         }
 
 		public override void SetDefaults()

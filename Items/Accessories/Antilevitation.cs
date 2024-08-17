@@ -10,8 +10,6 @@ namespace Feldosbetterweaponsmod.Items.Accessories
 	public class AntiLevitation : ModItem
 	{
 		public override void SetStaticDefaults() {
-            // DisplayName.SetDefault("Anti-gravity device");
-            // Tooltip.SetDefault("Imunity to levitation.");
 			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(32, 3));
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
@@ -28,7 +26,6 @@ namespace Feldosbetterweaponsmod.Items.Accessories
 		}
 
 		public override int ChoosePrefix(UnifiedRandom rand) {
-			// When the Item is given a prefix, only roll the best modifiers for accessories
 			return rand.Next(new int[] { PrefixID.Arcane, PrefixID.Lucky, PrefixID.Menacing, PrefixID.Quick, PrefixID.Violent, PrefixID.Warding });
 		}
 

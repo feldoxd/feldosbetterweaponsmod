@@ -34,7 +34,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 		{
 			target.AddBuff(BuffID.OnFire, 900);
 		}
-		public override void Kill(int timeLeft)
+		public override void OnKill(int timeLeft)
 		{
 			Terraria.Audio.SoundEngine.PlaySound(SoundID.Item14, Projectile.position);
 			int dustIndex = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, 31, 0f, 0f, 100, default(Color), 2f);
@@ -44,7 +44,7 @@ namespace Feldosbetterweaponsmod.Projectiles
 			Main.dust[dustIndex].velocity *= 5f;
 			dustIndex = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, 6, 0f, 0f, 100, default(Color), 2f);
 			Main.dust[dustIndex].velocity *= 3f;
-			base.Kill(timeLeft);
+			base.OnKill(timeLeft);
 		}
 	}
 }
